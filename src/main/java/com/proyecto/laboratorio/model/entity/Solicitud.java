@@ -118,6 +118,7 @@ public class Solicitud {
                 ", persona=" + persona +
                 ", empleado=" + empleado +
                 ", fundacion=" + fundacion +
+                ", fecha=" + fecha +
                 '}';
     }
 
@@ -132,11 +133,12 @@ public class Solicitud {
                 getServicios().equals(solicitud.getServicios()) &&
                 getPersona().equals(solicitud.getPersona()) &&
                 getEmpleado().equals(solicitud.getEmpleado()) &&
-                getFundacion().equals(solicitud.getFundacion());
+                getFundacion().equals(solicitud.getFundacion()) &&
+                getFecha().equals(solicitud.getFecha());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getPresupuesto(), getStatus(), getServicios(), getPersona(), getEmpleado(), getFundacion());
+        return Objects.hash(getId(), getPresupuesto(), getStatus(), getServicios(), getPersona(), getEmpleado(), getFundacion(), getFecha());
     }
 }
