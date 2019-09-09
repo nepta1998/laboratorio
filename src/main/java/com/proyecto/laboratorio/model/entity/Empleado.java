@@ -24,6 +24,17 @@ public class Empleado{
     @Column
     private String contraseña;
 
+    @Column
+    private char accesibilidad;
+
+    public char getAccesibilidad() {
+        return accesibilidad;
+    }
+
+    public void setAccesibilidad(char accesibilidad) {
+        this.accesibilidad = accesibilidad;
+    }
+
     @ManyToOne
     @JoinColumn(name="fundacion_Id", nullable=false)
     private Fundacion Fundacion;

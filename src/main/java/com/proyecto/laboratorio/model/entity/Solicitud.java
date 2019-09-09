@@ -1,8 +1,10 @@
 package com.proyecto.laboratorio.model.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 
@@ -37,6 +39,18 @@ public class Solicitud {
     @ManyToOne
     @JoinColumn(name="fundacion_Id", nullable=false)
     private Fundacion fundacion;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Column
+    private Date fecha;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = this.fecha;
+    }
 
     public long getId() {
         return id;
