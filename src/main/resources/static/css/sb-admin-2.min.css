@@ -10813,6 +10813,19 @@ a:focus {
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover
 }
+.bg-gradient-custom {
+  background: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
+  background-image: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
+  background-color: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
+  background-size: cover
+}
+
+.bg-gradient-custom-1 {
+  background: -webkit-linear-gradient(top, #6C1E1D, #C91A30, #D0842E, #DFAB31);
+  background-image: -webkit-linear-gradient(top, #6C1E1D, #C91A30, #D0842E, #DFAB31);
+  background-color: -webkit-linear-gradient(top, #6C1E1D, #C91A30, #D0842E, #DFAB31);
+  background-size: cover
+}
 
 .bg-gradient-secondary {
   background-color: #858796;
@@ -11782,6 +11795,11 @@ a:focus {
   background: url(https://source.unsplash.com/K4mSJ7kc0As/600x800);
   background-position: center;
   background-size: cover
+}
+.bg-login-image-1 {
+  background: url(../imagenes/gobierno.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .bg-register-image {
