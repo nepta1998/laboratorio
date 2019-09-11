@@ -55,7 +55,7 @@
         tablas
       </div>
 
-      <!-- Nav Item - forms Collapse Listas -->
+      <!-- Nav Item - tables Collapse Listas -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-table"></i>
@@ -64,13 +64,13 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Solicitudes:</h6>
-            <a class="collapse-item" href="login.html">
+            <a class="collapse-item" href="#">
               <i class="fas fa-folder-open"></i>
               <span>Solicitudes</span>
             </a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Servicios:</h6>
-            <a class="collapse-item " href="404.html">
+            <a class="collapse-item " th:href="@{/tableService}">
               <i class="fas fa-syringe"></i>
               <span>Servicios</span>
             </a>
@@ -89,7 +89,7 @@
         registrar
       </div>
 
-      <!-- Nav Item - tables Collapse Formularios -->
+      <!-- Nav Item - forms Collapse Formularios -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true" aria-controls="collapseList">
           <i class="fas fa-clipboard-list"></i>
