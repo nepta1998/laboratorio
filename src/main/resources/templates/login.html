@@ -40,7 +40,10 @@
                     <h1 class="h4 text-gray-900 mb-4">INICIAR SESIÓN!</h1>
                   </div>
                   <form class="user"  th:action="@{/index}" method="get">
-                    <div class="form-group" >
+                    <div class="form-group input-group">
+                      <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-user" style="color:#e74a3b"></i></span>
+                      </div>
                       <input
                               type="text"
                               class="form-control form-control-user"
@@ -49,13 +52,17 @@
                               placeholder="Enter user..."
                               required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group input-group">
+                      <div class="input-group-append">
+                        <span class="input-group-text"><i class="fas fa-lock" style="color:#e74a3b"></i></span>
+                      </div>
                       <input
                               type="password"
                               class="form-control form-control-user"
                               id="exampleInputPassword"
-                              placeholder="Password"
+                              placeholder="password"
                               required>
+                              
                     </div>
                     <hr style="opacity:0" />
                     <hr style="opacity:0" />
