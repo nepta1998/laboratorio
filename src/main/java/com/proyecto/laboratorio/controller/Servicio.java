@@ -9,4 +9,9 @@ public class Servicio {
     public String tableService() {
         return"tableService";
     }
+
+    @GetMapping({"/formService"})
+    public String formService() {
+        return"formService";
+    }
 }

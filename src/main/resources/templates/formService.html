@@ -9,17 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Proyecto laboratorio</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -65,11 +64,10 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Listados</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Solicitudes:</h6>
-                        <a class="collapse-item active" th:href=" @{/tableRequest}">
+                        <a class="collapse-item" th:href=" @{/tableRequest}">
                             <i class="fas fa-folder-open"></i>
                             <span>Solicitudes</span>
                         </a>
@@ -101,7 +99,7 @@
                     <i class="fas fa-clipboard-list"></i>
                     <span>Formularios</span>
                 </a>
-                <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
+                <div id="collapseList" class="collapse show" aria-labelledby="headingList" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Solicitud:</h6>
                         <a class="collapse-item" th:href="@{/formRequest}">
@@ -110,7 +108,7 @@
                         </a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Servicio:</h6>
-                        <a class="collapse-item" th:href="@{/formService}">
+                        <a class="collapse-item active" th:href="@{/formService}">
                             <i class="fas fa-syringe"></i>
                             <span>Registrar servicio</span>
                         </a>
@@ -201,53 +199,65 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
+                <div class="container-fluid ">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                </table>
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body ">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Registrar Servicio</h1>
+                                        </div>
+                                        <form class="form" method="POST">
+                                            <div class="form-group row">
+                                                <label for="nombre" class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><b>N</b></span>
+                                                        </div>
+                                                        <input type="text" class="form-control"id="nombre" placeholder="Nombre" required>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="nombre" class="col-sm-2 control-label"><b>Tipo:<sup>*</sup></b></label>
+                                                    <div class="custom-control custom-radio col-sm-2">
+                                                        <input type="radio" class="custom-control-input" id="tipo" name="radio" checked>
+                                                        <label for="tipo" class="custom-control-label">Medico</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio col-sm-2">
+                                                        <input type="radio" class="custom-control-input" id="tipo1" name="radio">
+                                                        <label for="tipo1" class="custom-control-label">Donación</label>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="costo" class="col-sm-2 control-label"><b>Costo:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                        </div>
+                                                        <input type="number" class="form-control"id="costo" placeholder="Costo" required>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                             <hr style="opacity:0" />
+                                             <hr style="opacity:0" />
+                                            <button type="submit" class="btn btn-info btn-block">
+                                                Registrar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
 
@@ -303,11 +313,11 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

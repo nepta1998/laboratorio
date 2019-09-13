@@ -103,19 +103,19 @@
         <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Solicitud:</h6>
-            <a class="collapse-item" href="login.html">
+            <a class="collapse-item" th:href="@{/formRequest}">
               <i class="fas fa-file-signature"></i>
               <span>Registrar solicitud</span>
             </a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Servicio:</h6>
-            <a class="collapse-item" href="#">
+            <a class="collapse-item" th:href="@{/formService}">
               <i class="fas fa-syringe"></i>
               <span>Registrar servicio</span>
             </a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Usuario:</h6>
-            <a class="collapse-item" href="blank.html">
+            <a class="collapse-item" th:href="@{/formUser}">
               <i class="fas fa-user"></i>
               <span>Registrar usuario</span>
             </a>

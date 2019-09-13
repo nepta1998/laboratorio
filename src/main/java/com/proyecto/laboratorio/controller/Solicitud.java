@@ -14,5 +14,11 @@ public class Solicitud {
     public String tableBeneficiario() {
         return"tableBeneficiario";
     }
+
+    @GetMapping({"/formRequest"})
+    public String formRequest() {
+        return"formRequest";
+    }
+
 }
 
