@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Empleado {
+public class CLogin {
 
-    @GetMapping({"/formUser"})
-    public String formUser() {
-        return"formUser";
+    @GetMapping({"/","/login"})
+    public String login() {
+        return "CLogin";
     }
 }

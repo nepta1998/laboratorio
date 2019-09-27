@@ -43,7 +43,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item " th:classappend="${listTab}">
                 <a class="nav-link" th:href="@{/index}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -108,7 +108,7 @@
                         </a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Servicio:</h6>
-                        <a class="collapse-item active" th:href="@{/formService}">
+                        <a class="collapse-item " th:href="@{/formService}" th:classappend="${listTab}">
                             <i class="fas fa-syringe"></i>
                             <span>Registrar servicio</span>
                         </a>
@@ -210,7 +210,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Registrar Servicio</h1>
                                         </div>
-                                        <form class="form" method="POST">
+                                        <form id="servicio" class="form" method="post" role="form" th:object="${servicio}">
                                             <div class="form-group row">
                                                 <label for="nombre" class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
                                                 <div class="col-sm-10 mb-3 mb-sm-0">
@@ -218,12 +218,12 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><b>N</b></span>
                                                         </div>
-                                                        <input type="text" class="form-control"id="nombre" placeholder="Nombre" required>
+                                                        <input type="text"  class="form-control"id="nombre" placeholder="Nombre" th:field="*{nombre}" required>
                                                     </div>
                                                 </div>
                                                 
                                             </div>
-                                            <div class="form-group row">
+                                            <div class="form-group row" th:field="*{tipo}">
                                                 <label for="nombre" class="col-sm-2 control-label"><b>Tipo:<sup>*</sup></b></label>
                                                     <div class="custom-control custom-radio col-sm-2">
                                                         <input type="radio" class="custom-control-input" id="tipo" name="radio" checked>
@@ -241,7 +241,7 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                                                         </div>
-                                                        <input type="number" class="form-control"id="costo" placeholder="Costo" required>
+                                                        <input type="number" class="form-control"id="costo" placeholder="Costo" th:field="*{costo}" required>
                                                     </div>
                                                 </div>
                                              </div>

@@ -3,6 +3,8 @@ package com.proyecto.laboratorio.model.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -11,13 +13,16 @@ public class Servicio {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native",strategy = "native")
-    private  long id;
+    private  Long id;
 
     @Column
+    @NotBlank
     private String nombre;
     @Column
+    @NotNull
     private char tipo;
     @Column
+    @NotNull
     private double costo;
 
     public long getId() {
