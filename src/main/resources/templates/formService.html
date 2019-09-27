@@ -210,10 +210,10 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Registrar Servicio</h1>
                                         </div>
-                                        <form id="servicio" class="form" method="post" role="form" th:object="${servicio}">
+                                        <form id="servicio" autocomplete="off" class="form" method="post" role="form" th:object="${servicio}" th:action="${editMode} ?@{/editServicio} :@{/formService}">
                                             <div class="form-group row">
-                                                <label for="nombre" class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
-                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <label for="nombre" class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><b>N</b></span>
@@ -223,20 +223,32 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="form-group row" th:field="*{tipo}">
-                                                <label for="nombre" class="col-sm-2 control-label"><b>Tipo:<sup>*</sup></b></label>
-                                                    <div class="custom-control custom-radio col-sm-2">
-                                                        <input type="radio" class="custom-control-input" id="tipo" name="radio" checked>
-                                                        <label for="tipo" class="custom-control-label">Medico</label>
+                                            <div class="form-group row" >
+                                                <label for="nombre" class="col-sm-3 control-label"><b>Tipo:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                                        </div>
+                                                        <select class="form-control" th:field="*{tipo}">
+                                                            <option th:value="'m'">Médico</option>
+                                                            <option th:value="'d'">Donación</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                    <!--<div class="custom-control custom-radio col-sm-2">
+                                                        <input type="radio" class="custom-control-input" id="tipo" name="radio" th:value="m" checked>
+                                                        <label for="tipo" class="custom-control-label">Médico</label>
                                                     </div>
                                                     <div class="custom-control custom-radio col-sm-2">
-                                                        <input type="radio" class="custom-control-input" id="tipo1" name="radio">
+                                                        <input type="radio" class="custom-control-input" id="tipo1" name="radio" th:value="d">
                                                         <label for="tipo1" class="custom-control-label">Donación</label>
-                                                    </div>
+                                                    </div>-->
                                             </div>
                                             <div class="form-group row">
-                                                <label for="costo" class="col-sm-2 control-label"><b>Costo:<sup>*</sup></b></label>
-                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <label for="costo" class="col-sm-3 control-label"><b>Costo:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
@@ -245,6 +257,7 @@
                                                     </div>
                                                 </div>
                                              </div>
+                                             <div class="alert alert-danger text-center" th:if="${errorMessage}" th:text="${errorMessage}">Error MEssage</div>
                                              <hr style="opacity:0" />
                                              <hr style="opacity:0" />
                                             <button type="submit" class="btn btn-info btn-block">

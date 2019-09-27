@@ -234,6 +234,11 @@
                           <span th:case="'d'">Donación</span>
                       </td>
                       <td th:text="${servicio.costo}"></td>
+                      <td>
+                          <a href="#" th:href="@{'/editServicio'+ ${servicio.id}}"><i class="fas fa-edit"></i></a>
+                          <a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-user-times"></i></a>
+                      </td>
+
                     </tr>
                   </tbody>
                 </table>

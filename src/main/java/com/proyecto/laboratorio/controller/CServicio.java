@@ -5,7 +5,14 @@ import com.proyecto.laboratorio.model.entity.Servicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class CServicio {
@@ -26,13 +33,34 @@ public class CServicio {
         return"formService";
     }
 
-    /*@PostMapping({"/formService"})
+    @PostMapping({"/formService"})
     public String createServicio(@Valid @ModelAttribute("servicioForm")Servicio servicio, BindingResult result, ModelMap model)
     {
         if(result.hasErrors())
         {
             model.addAttribute("servicio", servicio);
+            model.addAttribute("listTab","active");
+        }else {
+            try {
+                servicioService.createServicio(servicio);
+                model.addAttribute("servicio", new Servicio());
+                model.addAttribute("listTab","active");
+            } catch (Exception e) {
+                model.addAttribute("errorMessage",e.getMessage());
+                model.addAttribute("servicio", servicio);
+                model.addAttribute("listTab","active");
+            }
         }
         return"formService";
-    }*/
+    }
+
+    @GetMapping("/editServicio{id}")
+    public String getEditServicio(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Servicio servicioEdit= servicioService.getServicioById(id);
+        model.addAttribute("servicio", servicioEdit);
+        model.addAttribute("listTab","active");
+        model.addAttribute("editMode","true");
+        return"formService";
+    }
 }

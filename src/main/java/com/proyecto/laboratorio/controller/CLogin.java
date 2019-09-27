@@ -8,6 +8,6 @@ public class CLogin {
 
     @GetMapping({"/","/login"})
     public String login() {
-        return "CLogin";
+        return "login";
     }
 }
