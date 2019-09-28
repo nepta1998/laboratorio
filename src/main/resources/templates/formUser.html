@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Proyecto laboratorio</title>
+    <title>Proyecto Laboratorio I</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,12 +31,12 @@
         <ul class="navbar-nav bg-gradient-custom-1 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/index}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/indexgob}">
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-city"></i>
                     <!--<i class="fas fa-laugh-wink"></i>-->
                 </div>
-                <div class="sidebar-brand-text mx-3">Gobernación de lara</div>
+                <div class="sidebar-brand-text mx-3">Gobernación de Lara</div>
             </a>
 
             <!-- Divider -->
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" th:href="@{/index}">
+                <a class="nav-link" th:href="@{/indexgob}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -200,6 +200,106 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+                <div class="container-fluid ">
+                    <!-- Page Heading -->
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body ">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Registrar Usuario</h1>
+                                        </div>
+
+                                        <form id="usuario" class="form" method="post" role="form" th:object="${usuario}">
+
+                                            <div class="form-group row">
+                                                <label for="cedula" class="col-sm-2 control-label"><b>Cédula:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <select class="combobox">
+                                                                <option></option>
+                                                                <option value="V">V</option>
+                                                                <option value="E">E</option>
+                                                                <option value="J">J</option>
+                                                            </select>
+                                                        </div>
+                                                        <input type="text"  class="form-control"id="cedula" placeholder="Cedula" th:field="*{cedula}" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="nombre" class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><b>N</b></span>
+                                                        </div>
+                                                        <input type="text"  class="form-control"id="nombre" placeholder="Nombre" th:field="*{nombre}" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row" th:field="*{sexo}">
+                                                <label for="nombre" class="col-sm-2 control-label"><b>Sexo:<sup>*</sup></b></label>
+                                                <div class="custom-control custom-radio col-sm-2">
+                                                    <input type="radio" class="custom-control-input" id="sexo1" name="radio" checked>
+                                                    <label for="sexo1" class="custom-control-label">Masculino</label>
+                                                </div>
+                                                <div class="custom-control custom-radio col-sm-2">
+                                                    <input type="radio" class="custom-control-input" id="sexo2" name="radio">
+                                                    <label for="sexo2" class="custom-control-label">Femenino</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="edad" class="col-sm-2 control-label"><b>Edad:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><b>E</b></span>
+                                                        </div>
+                                                        <input type="text" class="form-control"id="edad" placeholder="Edad" th:field="*{edad}" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="telefono" class="col-sm-2 control-label"><b>Teléfono:<sup>*</sup></b></label>
+                                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <select class="combobox">
+                                                                <option></option>
+                                                                <option value="MO">0414</option>
+                                                                <option value="MO2">0424</option>
+                                                                <option value="MOV">0416</option>
+                                                                <option value="MOV2">0426</option>
+                                                                <option value="DI">0412</option>
+                                                            </select>
+
+                                                        </div>
+                                                        <input type="text"  class="form-control"id="telefono" placeholder="Telefono" th:field="*{telefono}" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <hr style="opacity:0" />
+                                            <hr style="opacity:0" />
+                                            <button type="submit" class="btn btn-info btn-block">
+                                                Registrar
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End of Main Content -->
 
@@ -207,7 +307,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2019</span>
+                        <span>Laboratorio I UCLA DCYT</span>
                     </div>
                 </div>
             </footer>
