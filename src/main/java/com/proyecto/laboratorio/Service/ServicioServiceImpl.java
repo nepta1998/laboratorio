@@ -32,6 +32,31 @@ public class ServicioServiceImpl implements ServicioService{
         return servicioRepository.findById(id).orElseThrow(() -> new  Exception("El servicio no existe"));
     }
 
+    @Override
+    public Servicio getServicioByNombre(String nombre) throws Exception {
+        return servicioRepository.findByNombre(nombre).orElseThrow(() -> new  Exception("El servicio no existe"));
+    }
+
+    @Override
+    public Servicio updateServicio(Servicio servicio) throws Exception {
+        Servicio encontrarServicio=getServicioById(servicio.getId());
+        mapServicio(servicio,encontrarServicio);
+        return servicioRepository.save(encontrarServicio);
+
+    }
+
+    @Override
+    public void deleteServicio(Long id) throws Exception {
+        Servicio servicio=getServicioById(id);
+        servicioRepository.delete(servicio);
+    }
+
+    protected void mapServicio(Servicio from,Servicio to){
+        to.setNombre(from.getNombre());
+        to.setTipo(from.getTipo());
+        to.setCosto(from.getCosto());
+    }
+
 
     private boolean verificarUsuarioExiste(Servicio servicio) throws Exception {
         Optional<Servicio> servicioEncontrado=servicioRepository.findByNombre(servicio.getNombre());

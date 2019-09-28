@@ -51,6 +51,7 @@ public class CServicio {
                 model.addAttribute("listTab","active");
             }
         }
+        model.addAttribute("servicioList",servicioService.getAllServicios());
         return"formService";
     }
 
@@ -58,9 +59,44 @@ public class CServicio {
     public String getEditServicio(Model model, @PathVariable(name="id")Long id) throws Exception
     {
         Servicio servicioEdit= servicioService.getServicioById(id);
+        model.addAttribute("servicioList",servicioService.getAllServicios());
         model.addAttribute("servicio", servicioEdit);
         model.addAttribute("listTab","active");
         model.addAttribute("editMode","true");
         return"formService";
+    }
+
+    @PostMapping("/editServicio")
+    public String postEditServicio(@Valid @ModelAttribute("servicioForm")Servicio servicio, BindingResult result, ModelMap model )
+    {
+        if(result.hasErrors())
+        {
+            model.addAttribute("servicio", servicio);
+            model.addAttribute("listTab","active");
+            model.addAttribute("editMode","true");
+        }else {
+            try {
+                servicioService.updateServicio(servicio);
+                model.addAttribute("servicio", new Servicio());
+                model.addAttribute("listTab","active");
+            } catch (Exception e) {
+                model.addAttribute("errorMessage",e.getMessage());
+                model.addAttribute("servicio", servicio);
+                model.addAttribute("listTab","active");
+                model.addAttribute("editMode","true");
+            }
+        }
+        model.addAttribute("servicioList",servicioService.getAllServicios());
+        return"formService";
+    }
+    @GetMapping("/deleteServicio{id}")
+    public String deleteSercvicio(Model model, @PathVariable(name="id")Long id)
+    {
+        try {
+            servicioService.deleteServicio(id);
+        }catch (Exception e){
+            model.addAttribute("listError",e.getMessage());
+        }
+        return tableService(model);
     }
 }

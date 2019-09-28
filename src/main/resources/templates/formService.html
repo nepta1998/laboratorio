@@ -211,6 +211,7 @@
                                             <h1 class="h4 text-gray-900 mb-4">Registrar Servicio</h1>
                                         </div>
                                         <form id="servicio" autocomplete="off" class="form" method="post" role="form" th:object="${servicio}" th:action="${editMode} ?@{/editServicio} :@{/formService}">
+                                            <input class="form-control" type=hidden th:field="${servicio.id}"  th:if="${editMode}">
                                             <div class="form-group row">
                                                 <label for="nombre" class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
                                                 <div class="col-sm-9 mb-3 mb-sm-0">
@@ -253,15 +254,14 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                                                         </div>
-                                                        <input type="number" class="form-control"id="costo" placeholder="Costo" th:field="*{costo}" required>
+                                                        <input type="number" step="any" class="form-control"id="costo" placeholder="Costo" th:field="*{costo}" required>
                                                     </div>
                                                 </div>
                                              </div>
                                              <div class="alert alert-danger text-center" th:if="${errorMessage}" th:text="${errorMessage}">Error MEssage</div>
                                              <hr style="opacity:0" />
                                              <hr style="opacity:0" />
-                                            <button type="submit" class="btn btn-info btn-block">
-                                                Registrar
+                                            <button type="submit" class="btn btn-info btn-block" th:text="${editMode} ?'Actualizar': 'Registrar'">
                                             </button>
                                         </form>
                                     </div>

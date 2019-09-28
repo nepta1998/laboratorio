@@ -201,33 +201,37 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">Listado de servicios</h1>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Listado</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>#</th>
                       <th>Nombre</th>
                       <th>Tipo</th>
                       <th>Costo</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
+                      <th>#</th>
                       <th>Nombre</th>
                       <th>Tipo</th>
                       <th>Costo</th>
+                      <th></th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr th:each="servicio: ${servicioList}">
+                      <td th:text="${servicio.id}"></td>
                       <td th:text="${servicio.nombre}"></td>
                       <td th:switch="${servicio.tipo}">
                           <span th:case="'m'">Médico</span>
@@ -235,13 +239,14 @@
                       </td>
                       <td th:text="${servicio.costo}"></td>
                       <td>
-                          <a href="#" th:href="@{'/editServicio'+ ${servicio.id}}"><i class="fas fa-edit"></i></a>
-                          <a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-user-times"></i></a>
+                          <span><a href="#" th:href="@{'/editServicio'+ ${servicio.id}}"><i class="fas fa-edit"></i></a></span>
+                          <span>|<a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-user-times"></i></a></span>    
                       </td>
 
                     </tr>
                   </tbody>
                 </table>
+                <div class="alert alert-danger text-center" th:if="${listError}" th:text="${listError}">Error MEssage</div>
               </div>
             </div>
           </div>
@@ -292,6 +297,37 @@
     </div>
   </div>
 
+  <!--Delete Modal-->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModaLongTitle">Confirmar eliminación</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">seleccione "Eliminar" para confirmar la elminicaion del servicio.
+          <input type="hidden" id="servicioHiddenInput" name="servicioHiddenInput" />
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary" type="button" th:onclick="deleteServicio()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function confirmDelete(id) {
+      $('#deleteModal').modal('show');
+      $("#servicioHiddenInput").val(id);
+    }
+
+    function deleteServicio() {
+      var id = $("#servicioHiddenInput").val();
+      window.location = "deleteServicio"+id;
+    }
+  </script>
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -308,6 +344,7 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
 
 </body>
 
