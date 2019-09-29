@@ -114,10 +114,10 @@
                             <span>Registrar servicio</span>
                         </a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Usuario:</h6>
+                        <h6 class="collapse-header">Empleado:</h6>
                         <a class="collapse-item" th:href="@{/formUser}">
                             <i class="fas fa-user"></i>
-                            <span>Registrar usuario</span>
+                            <span>Registrar empleado</span>
                         </a>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
                                 <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                             </a>
                             <!-- Dropdown - User Information -->
@@ -203,193 +203,211 @@
 
                 <div class="container-fluid ">
                     <!-- Page Heading -->
-                  <div class="row justify-content-center">
+                    <div class="row justify-content-center">
 
-                      <div class="col-xl-10 col-lg-12 col-md-9">
+                        <div class="col-xl-10 col-lg-12 col-md-9">
 
-                          <div class="card o-hidden border-0 shadow-lg my-5">
-                              <div class="card-body p-0">
-                                  <!-- Nested Row within Card Body -->
-                                  <div class="row">
-                                      <div class="col-lg-6">
-                                        <!--data table-->
-                                        <div class="card shadow mb-4">
-                                            <div class="card-header py-3"> <i class="fas fa-table"></i>
-                                                <span>Servicios</span>
-                                            </div>
-                                            <div class="card-header py-3">
-                                                <div class="form-group input-group">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                            <div class="card o-hidden border-0 shadow-lg my-5">
+                                <div class="card-body p-0">
+                                    <!-- Nested Row within Card Body -->
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <!--data table-->
+                                            <div class="card shadow mb-4">
+                                                <div class="card-header py-3"> <i class="fas fa-table"></i>
+                                                    <span>Servicios</span>
+                                                </div>
+                                                <div class="card-header py-3">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-sort"></i></span>
+                                                        </div>
+                                                        <select class="form-control">
+                                                            <option th:value="'m'">Médico</option>
+                                                            <option th:value="'d'">Donación</option>
+                                                        </select>
                                                     </div>
-                                                    <select class="form-control">
-                                                        <option th:value="'m'">Médico</option>
-                                                        <option th:value="'d'">Donación</option>
-                                                    </select>
+                                                </div>
+                                                <div class="card-header py-3">
+                                                    <button type="submit" class="btn btn-info btn-block">Agregar
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered" id="dataTable" width="100%"
+                                                            cellspacing="0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Nombre</th>
+                                                                    <th>Tipo</th>
+                                                                    <th>Costo</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Nombre</th>
+                                                                    <th>Tipo</th>
+                                                                    <th>Costo</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </tfoot>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>Medico</td>
+                                                                    <td>2000</td>
+                                                                    <td>
+                                                                        <span><a href="#"><i
+                                                                                    class="fas fa-trash-alt"></i></a></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>Medico</td>
+                                                                    <td>2000</td>
+                                                                    <td>
+                                                                        <span><a href="#"><i
+                                                                                    class="fas fa-trash-alt"></i></a></span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="card-header py-3">
-                                                <button type="submit" class="btn btn-info btn-block">Agregar
-                                            </button>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                         <thead>
-                                                             <tr>
-                                                                 <th>#</th>
-                                                                 <th>Nombre</th>
-                                                                 <th>Tipo</th>
-                                                                 <th>Costo</th>
-                                                                 <th></th>
-                                                             </tr>
-                                                         </thead>
-                                                         <tfoot>
-                                                             <tr>
-                                                                 <th>#</th>
-                                                                 <th>Nombre</th>
-                                                                 <th>Tipo</th>
-                                                                 <th>Costo</th>
-                                                                 <th></th>
-                                                             </tr>
-                                                         </tfoot>
-                                                        <tbody>
-                                                               <tr>
-                                                                   <td>1</td>
-                                                                   <td>Tiger Nixon</td>
-                                                                   <td>Medico</td>
-                                                                   <td>2000</td>
-                                                                   <td>
-                                                                       <span><a href="#"><i class="fas fa-trash-alt"></i></a></span>
-                                                                   </td>
-                                                               </tr>
-                                                               <tr>
-                                                                   <td>1</td>
-                                                                   <td>Tiger Nixon</td>
-                                                                   <td>Medico</td>
-                                                                   <td>2000</td>
-                                                                   <td>
-                                                                       <span><a href="#"><i class="fas fa-trash-alt"></i></a></span>
-                                                                   </td>
-                                                               </tr>
-                                                        </tbody>
-                                                    </table>
+                                            <!--end data table-->
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="p-5">
+                                                <div class="text-center">
+                                                    <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
                                                 </div>
+                                                <form id="servicio" autocomplete="off" class="form" method="post"
+                                                    role="form">
+                                                    <div class="form-group row">
+                                                        <label for="cedula"
+                                                            class="col-sm-3 control-label"><b>Cedula:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><i class="far fa-id-card"></i></span>
+                                                                </div>
+                                                                <div class="input-group-append">
+                                                                    <select class="input-group-text">
+                                                                        <option value="V">V</option>
+                                                                        <option value="E">E</option>
+                                                                        <option value="J">J</option>
+                                                                    </select>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="cedula" placeholder="cedula" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="nombre"
+                                                            class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><b>N</b></span>
+                                                                </div>
+                                                                <input type="text" class="form-control" id="nombre"
+                                                                    placeholder="Nombre" required>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="nombre"
+                                                            class="col-sm-3 control-label"><b>Sexo:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><i
+                                                                            class="fas fa-sort"></i></span>
+                                                                </div>
+                                                                <select class="form-control">
+                                                                    <option th:value="'f'">Femenino</option>
+                                                                    <option th:value="'m'">Masculino</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="edad"
+                                                            class="col-sm-3 control-label"><b>Edad:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><i
+                                                                            class="fas fa-birthday-cake"></i></span>
+                                                                </div>
+                                                                <input type="number" step="any" class="form-control"
+                                                                    id="edad" placeholder="Edad" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="telefono"
+                                                            class="col-sm-3 control-label"><b>Telefono:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><i
+                                                                            class="fas fa-phone-alt"></i></span>
+                                                                </div>
+                                                                <div class="input-group-append">
+                                                                    <select class="input-group-text">
+                                                                        <option value="MO">0414</option>
+                                                                        <option value="MO2">0424</option>
+                                                                        <option value="MOV">0416</option>
+                                                                        <option value="MOV2">0426</option>
+                                                                        <option value="DI">0412</option>
+                                                                    </select>
+                                                                </div>
+                                                                <input type="number" step="any" class="form-control"
+                                                                    id="telefono" placeholder="telefono" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="total"
+                                                            class="col-sm-3 control-label"><b>Total:<sup>*</sup></b></label>
+                                                        <div class="col-sm-9 mb-3 mb-sm-0">
+                                                            <div class="form-group input-group">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text"><i
+                                                                            class="fas fa-dollar-sign"></i></span>
+                                                                </div>
+                                                                <input type="number" step="any" class="form-control"
+                                                                    id="total" placeholder="Total" disabled required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="alert alert-danger text-center" th:if="${errorMessage}"
+                                                        th:text="${errorMessage}">Error Message</div>
+                                                    <hr style="opacity:0" />
+                                                    <hr style="opacity:0" />
+                                                    <button type="submit" class="btn btn-info btn-block">
+                                                        Registrar Solicitud
+                                                    </button>
+                                                </form>
+                                                <hr style="opacity:0" />
                                             </div>
                                         </div>
-                                        <!--end data table-->
-                                      </div>
-                                      <div class="col-lg-6">
-                                          <div class="p-5">
-                                              <div class="text-center">
-                                                  <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
-                                              </div>
-                                              <form id="servicio" autocomplete="off" class="form" method="post" role="form" >
-                                                  <div class="form-group row">
-                                                      <label for="cedula"
-                                                          class="col-sm-3 control-label"><b>Cedula:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><i class="far fa-id-card"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" id="nombre"
-                                                                  placeholder="cedula" required>
-                                                          </div>
-                                                      </div>
-                                                 </div>
-                                                  <div class="form-group row">
-                                                      <label for="nombre"
-                                                          class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><b>N</b></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" id="nombre" placeholder="Nombre"  required>
-                                                          </div>
-                                                      </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                                  </div>
-                                                  <div class="form-group row">
-                                                      <label for="nombre"
-                                                          class="col-sm-3 control-label"><b>Sexo:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><i class="fas fa-sort"></i></span>
-                                                              </div>
-                                                              <select class="form-control">
-                                                                  <option th:value="'f'">Femenino</option>
-                                                                  <option th:value="'m'">Masculino</option>
-                                                              </select>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group row">
-                                                      <label for="edad"
-                                                          class="col-sm-3 control-label"><b>Edad:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
-                                                              </div>
-                                                              <input type="number" step="any" class="form-control"
-                                                                  id="edad" placeholder="Edad"  required>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group row">
-                                                      <label for="telefono"
-                                                          class="col-sm-3 control-label"><b>Telefono:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
-                                                              </div>
-                                                              <div class="input-group-append">
-                                                                  <select class="input-group-text">
-                                                                      <option value="MO">0414</option>
-                                                                      <option value="MO2">0424</option>
-                                                                      <option value="MOV">0416</option>
-                                                                      <option value="MOV2">0426</option>
-                                                                      <option value="DI">0412</option>
-                                                                  </select>
-                                                              </div>
-                                                              <input type="number" step="any" class="form-control" id="telefono" placeholder="telefono"  required>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group row">
-                                                      <label for="total"
-                                                          class="col-sm-3 control-label"><b>Total:<sup>*</sup></b></label>
-                                                      <div class="col-sm-9 mb-3 mb-sm-0">
-                                                          <div class="form-group input-group">
-                                                              <div class="input-group-append">
-                                                                  <span class="input-group-text"><i
-                                                                          class="fas fa-dollar-sign"></i></span>
-                                                              </div>
-                                                              <input type="number" step="any" class="form-control" id="total" placeholder="Total" disabled required>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="alert alert-danger text-center" th:if="${errorMessage}"  th:text="${errorMessage}">Error MEssage</div>
-                                                  <hr style="opacity:0" />
-                                                  <hr style="opacity:0" />
-                                                  <button type="submit" class="btn btn-info btn-block" >
-                                                      Registrar Solicitud
-                                                  </button>
-                                              </form>
-                                              <hr style="opacity:0" />
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                        </div>
 
-                      </div>
-
-                  </div>
+                    </div>
 
                 </div>
             </div>
