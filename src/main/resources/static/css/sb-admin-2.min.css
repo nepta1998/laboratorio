@@ -5606,6 +5606,7 @@ a.badge-dark.focus, a.badge-dark:focus {
   }
 }
 
+
 .media {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10817,6 +10818,13 @@ a:focus {
   background: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
   background-image: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
   background-color: -webkit-linear-gradient(top, #06366d, #024972, #1d96db);
+  background-size: cover
+}
+.bg-gradient-custom-2
+{
+  background-color: #d34edf;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #d34edf), to(#8a0083));
+  background-image: linear-gradient(180deg, #d34edf 10%, #8a0083 100%);
   background-size: cover
 }
 

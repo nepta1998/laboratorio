@@ -211,9 +211,7 @@
                                 </div>
                                 <a class="card-footer text-black clearfix small z-1" th:href="@{/tableFunNinnos}">
                                     <span class="float-left">Ver Detalles</span>
-                                    <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
+                                    <span class="float-right"> <i class="fas fa-angle-right"></i></span>
                                 </a>
                             </div>
                         </div>
@@ -227,30 +225,184 @@
                                 </div>
                                 <a class="card-footer text-black clearfix small z-1" th:href="@{/tableFunDisc}">
                                     <span class="float-left">Ver Detalles</span>
-                                    <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
+                                    <span class="float-right"><i class="fas fa-angle-right"></i></span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-sm-6 mb-3">
                             <div class="card text-white bg-success o-hidden h-100">
                                 <div class="card-body">
-                                    <div class="card-body-icon">
-                                        <i class="fa fa-female icon-2x" aria-hidden="true"></i>
-                                    </div>
+                                    <div class="card-body-icon"><i class="fa fa-female icon-2x" aria-hidden="true"></i></div>
                                     <div class="mr-5">Fundación Regional de la Mujer</div>
+                                </div>
+                                <a class="card-footer text-black clearfix small z-1" th:href="@{/tableFunMujer}">
+                                    <span class="float-left">Ver Detalles</span>
+                                    <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fundacion table-change fundacion -->
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class="container-fluid">
+
+
+                                        <!-- DataTales Example -->
+                                        <div class="card shadow mb-4">
+                                            <div class="card-header py-3">
+                                                <h2 class="m-0 font-weight-bold text-primary">Fundaciones:</h2>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered" id="dataTable" width="100%"
+                                                        cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Nombre</th>
+                                                                <th>Presupesto</th>
+                                                                <th>Porcentaje</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Nombre</th>
+                                                                <th>Presupesto</th>
+                                                                <th>Porcentaje</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>Mujer</td>
+                                                                <td>2000</td>
+                                                                <td>
+                                                                    <label for="Discapacitado" class="mr-2">30%</label>
+                                                                    <div class="progress">
+                                                                        <div id="Discapacitado"
+                                                                            class="progress-bar bg-gradient-custom-2"
+                                                                            role="progressbar" style="width: 30%"
+                                                                            aria-valuenow="30" aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>Niño</td>
+                                                                <td>2000</td>
+                                                                <td>
+                                                                    <label for="Discapacitado" class="mr-2">30%</label>
+                                                                    <div class="progress">
+                                                                        <div id="Discapacitado"
+                                                                            class="progress-bar bg-gradient-primary"
+                                                                            role="progressbar" style="width: 30%"
+                                                                            aria-valuenow="30" aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td>Discapacitados</td>
+                                                                <td>2000</td>
+                                                                <td>
+                                                                    <label for="Discapacitado" class="mr-2">40%</label>
+                                                                        <div class="progress">
+                                                                            <div id="Discapacitado"
+                                                                                class="progress-bar bg-gradient-success"
+                                                                                role="progressbar" style="width: 40%"
+                                                                                aria-valuenow="40" aria-valuemin="0"
+                                                                                aria-valuemax="100"></div>
+                                                                        </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <h1 class="h3 mb-2 text-gray-800">Total de presupuesto: 500000</h1>
+                                        <!--formulario presupuesto-->
+                                        <div class="card o-hidden border-0 shadow-lg my-5">
+                                            <div class="card-body ">
+                                                <div class="row justify-content-center">
+                                                    <div class="p-5">
+                                                        <div class="text-center">
+                                                            <h1 class="h4 text-gray-900 mb-4">Actualizar presupuesto:</h1>
+                                                        </div>
+                                                        <form role="form" class="form">
+                                                            <div class="form-group row">
+                                                                <label for="presupuesto" class="col-sm-4 control-label"><b>Cantidad:<sup>*</sup></b></label>
+                                                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                                                    <div class="form-group input-group">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                                        </div>
+                                                                        <input type="number" step="any" class="form-control" id="presupuesto" placeholder="Cantidad" required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr style="opacity:0" />
+                                                            <button type="submit" class="btn btn-info btn-block">
+                                                                Actualizar presupuesto
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end formulario presupuesto-->
                                     </div>
-                                    <a class="card-footer text-black clearfix small z-1" th:href="@{/tableFunMujer}">
-                                        <span class="float-left">Ver Detalles</span>
-                                        <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                                    </a>
+                                    
+                                </div>  
+                            </div> 
+                        </div>
+                        <!-- Fundacion change-->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header-->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Cambiar porcentaje de las fundaciones</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <form role="form" class="form">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="customRange1">Fundacion de la mujer </label>
+                                                <input type="range" class="custom-range" id="customRange1" >
+                                                <span id="demo1" ></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="customRange1">Fundacion del niño </label>
+                                                <input type="range" class="custom-range" id="customRange2" >
+                                                <span id="demo2" ></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="customRange1">Fundacion de discapacitados </label>
+                                                <input type="range" class="custom-range" id="customRange3">
+                                                <span id="demo3" ></span>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-info btn-block">Actualizar porcentaje</button>
+                                    </form>
+
                                 </div>
                             </div>
-
                         </div>
+                        <!-- end Fundacion change-->
+                    </div>
+                    <!-- end Fundacion table-change fundacion -->
 
 
         </div>
@@ -299,6 +451,33 @@
         </div>
     </div>
 </div>
+
+<script>
+var slider = document.getElementById("customRange1");
+var output = document.getElementById("demo1");
+output.innerHTML = slider.value;
+
+var slider1 = document.getElementById("customRange2");
+var output1 = document.getElementById("demo2");
+output1.innerHTML = slider1.value;
+
+var slider3 = document.getElementById("customRange3");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+
+slider1.oninput = function() {
+    output1.innerHTML = this.value;
+}
+
+slider3.oninput = function() {
+    output3.innerHTML = this.value;
+}
+
+</script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
