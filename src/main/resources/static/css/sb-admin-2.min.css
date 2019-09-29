@@ -4098,6 +4098,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   border: 0
 }
 
+
 .custom-range::-webkit-slider-thumb {
   width: 1rem;
   height: 1rem;
@@ -4235,6 +4236,91 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .custom-range:disabled::-ms-thumb {
   background-color: #b7b9cc
+}
+
+.custom-range.custom-range-1:focus {
+  outline: 0
+}
+
+.custom-range.custom-range-1:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(220, 53, 69, .25)
+}
+
+.custom-range.custom-range-1:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(220, 53, 69, .25)
+}
+
+.custom-range.custom-range-1:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(220, 53, 69, .25)
+}
+
+.custom-range.custom-range-1::-webkit-slider-thumb {
+  background-color: #dc35d4
+}
+
+.custom-range.custom-range-1::-webkit-slider-thumb:active {
+  background-color: #ffadfb
+}
+
+.custom-range.custom-range-1::-moz-range-thumb {
+  background-color: #8a0083
+}**
+
+.custom-range.custom-range-1::-moz-range-thumb:active {
+  background-color: #ffadfb
+}
+
+.custom-range.custom-range-1::-ms-thumb {
+  background-color: #8a0083
+}
+
+.custom-range.custom-range-1::-ms-thumb:active {
+  background-color: #ffadfb
+}
+
+.custom-range.custom-range-1:focus {
+  outline: 0
+}
+
+
+.custom-range.custom-range-teal:focus {
+  outline: 0
+}
+
+.custom-range.custom-range-teal:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(32, 201, 151, .25)
+}
+
+.custom-range.custom-range-teal:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(32, 201, 151, .25)
+}
+
+.custom-range.custom-range-teal:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(32, 201, 151, .25)
+}
+
+.custom-range.custom-range-teal::-webkit-slider-thumb {
+  background-color: #20c997
+}
+
+.custom-range.custom-range-teal::-webkit-slider-thumb:active {
+  background-color: #aaf1dc
+}
+
+.custom-range.custom-range-teal::-moz-range-thumb {
+  background-color: #20c997
+}
+
+.custom-range.custom-range-teal::-moz-range-thumb:active {
+  background-color: #aaf1dc
+}
+
+.custom-range.custom-range-teal::-ms-thumb {
+  background-color: #20c997
+}
+
+.custom-range.custom-range-teal::-ms-thumb:active {
+  background-color: #aaf1dc
 }
 
 .custom-control-label::before, .custom-file-label, .custom-select {
