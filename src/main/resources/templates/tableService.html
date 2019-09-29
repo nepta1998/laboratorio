@@ -240,7 +240,7 @@
                       <td th:text="${servicio.costo}"></td>
                       <td>
                           <span><a href="#" th:href="@{'/editServicio'+ ${servicio.id}}"><i class="fas fa-edit"></i></a></span>
-                          <span>|<a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-user-times"></i></a></span>    
+                          <span>|<a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-trash-alt"></i></a></span>    
                       </td>
 
                     </tr>
@@ -299,7 +299,7 @@
 
   <!--Delete Modal-->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog " role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModaLongTitle">Confirmar eliminación</h5>

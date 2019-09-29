@@ -212,10 +212,12 @@
                                             <h1 class="h4 text-gray-900 mb-4">Registrar Usuario</h1>
                                         </div>
 
-                                        <form id="usuario" class="form" method="post" role="form" th:object="${usuario}">
+                                        <form id="usuario" class="form" method="post" role="form"
+                                            th:object="${usuario}">
 
                                             <div class="form-group row">
-                                                <label for="cedula" class="col-sm-2 control-label"><b>Cédula:<sup>*</sup></b></label>
+                                                <label for="cedula"
+                                                    class="col-sm-2 control-label"><b>Cédula:<sup>*</sup></b></label>
                                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
@@ -226,48 +228,57 @@
                                                                 <option value="J">J</option>
                                                             </select>
                                                         </div>
-                                                        <input type="text"  class="form-control"id="cedula" placeholder="Cedula" th:field="*{cedula}" required>
+                                                        <input type="text" class="form-control" id="cedula"
+                                                            placeholder="Cedula" th:field="*{cedula}" required>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="nombre" class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                <label for="nombre"
+                                                    class="col-sm-2 control-label"><b>Nombre:<sup>*</sup></b></label>
                                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><b>N</b></span>
                                                         </div>
-                                                        <input type="text"  class="form-control"id="nombre" placeholder="Nombre" th:field="*{nombre}" required>
+                                                        <input type="text" class="form-control" id="nombre"
+                                                            placeholder="Nombre" th:field="*{nombre}" required>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row" th:field="*{sexo}">
-                                                <label for="nombre" class="col-sm-2 control-label"><b>Sexo:<sup>*</sup></b></label>
+                                                <label for="nombre"
+                                                    class="col-sm-2 control-label"><b>Sexo:<sup>*</sup></b></label>
                                                 <div class="custom-control custom-radio col-sm-2">
-                                                    <input type="radio" class="custom-control-input" id="sexo1" name="radio" checked>
+                                                    <input type="radio" class="custom-control-input" id="sexo1"
+                                                        name="radio" checked>
                                                     <label for="sexo1" class="custom-control-label">Masculino</label>
                                                 </div>
                                                 <div class="custom-control custom-radio col-sm-2">
-                                                    <input type="radio" class="custom-control-input" id="sexo2" name="radio">
+                                                    <input type="radio" class="custom-control-input" id="sexo2"
+                                                        name="radio">
                                                     <label for="sexo2" class="custom-control-label">Femenino</label>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="edad" class="col-sm-2 control-label"><b>Edad:<sup>*</sup></b></label>
+                                                <label for="edad"
+                                                    class="col-sm-2 control-label"><b>Edad:<sup>*</sup></b></label>
                                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><b>E</b></span>
                                                         </div>
-                                                        <input type="text" class="form-control"id="edad" placeholder="Edad" th:field="*{edad}" required>
+                                                        <input type="text" class="form-control" id="edad"
+                                                            placeholder="Edad" th:field="*{edad}" required>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="telefono" class="col-sm-2 control-label"><b>Teléfono:<sup>*</sup></b></label>
+                                                <label for="telefono"
+                                                    class="col-sm-2 control-label"><b>Teléfono:<sup>*</sup></b></label>
                                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                                     <div class="form-group input-group">
                                                         <div class="input-group-append">
@@ -281,7 +292,8 @@
                                                             </select>
 
                                                         </div>
-                                                        <input type="text"  class="form-control"id="telefono" placeholder="Telefono" th:field="*{telefono}" required>
+                                                        <input type="text" class="form-control" id="telefono"
+                                                            placeholder="Telefono" th:field="*{telefono}" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -354,12 +366,12 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins 
+    <script src="vendor/chart.js/Chart.min.js"></script>-->
 
-    <!-- Page level custom scripts -->
+    <!-- Page level custom scripts 
     <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>-->
 
 </body>
 
