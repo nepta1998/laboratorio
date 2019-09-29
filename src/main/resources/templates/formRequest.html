@@ -114,10 +114,10 @@
                             <span>Registrar servicio</span>
                         </a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Usuario:</h6>
+                        <h6 class="collapse-header">Empleado:</h6>
                         <a class="collapse-item" th:href="@{/formUser}">
                             <i class="fas fa-user"></i>
-                            <span>Registrar usuario</span>
+                            <span>Registrar empleado</span>
                         </a>
                     </div>
                 </div>
@@ -293,7 +293,12 @@
                                                               <div class="input-group-append">
                                                                   <span class="input-group-text"><i class="far fa-id-card"></i></span>
                                                               </div>
-                                                              <input type="text" class="form-control" id="nombre"
+                                                              <select class="input-group-text">
+                                                                  <option value="V">V</option>
+                                                                  <option value="E">E</option>
+                                                                  <option value="J">J</option>
+                                                              </select>
+                                                              <input type="text" class="form-control" id="cedula"
                                                                   placeholder="cedula" required>
                                                           </div>
                                                       </div>
