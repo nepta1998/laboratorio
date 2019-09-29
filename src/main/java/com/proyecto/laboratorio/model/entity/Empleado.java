@@ -24,16 +24,6 @@ public class Empleado{
     @Column
     private String contraseña;
 
-    @Column
-    private char accesibilidad;
-
-    public char getAccesibilidad() {
-        return accesibilidad;
-    }
-
-    public void setAccesibilidad(char accesibilidad) {
-        this.accesibilidad = accesibilidad;
-    }
 
     @ManyToOne
     @JoinColumn(name="fundacion_Id", nullable=false)
@@ -104,7 +94,6 @@ public class Empleado{
                 ", edad=" + edad +
                 ", telefono='" + telefono + '\'' +
                 ", contraseña='" + contraseña + '\'' +
-                ", accesibilidad=" + accesibilidad +
                 ", Fundacion=" + Fundacion +
                 '}';
     }
@@ -116,7 +105,6 @@ public class Empleado{
         Empleado empleado = (Empleado) o;
         return getSexo() == empleado.getSexo() &&
                 getEdad() == empleado.getEdad() &&
-                getAccesibilidad() == empleado.getAccesibilidad() &&
                 getCedula().equals(empleado.getCedula()) &&
                 getNombre().equals(empleado.getNombre()) &&
                 getTelefono().equals(empleado.getTelefono()) &&
@@ -126,6 +114,6 @@ public class Empleado{
 
     @Override
     public int hashCode() {
-        return Objects.hash(getCedula(), getNombre(), getSexo(), getEdad(), getTelefono(), getContraseña(), getAccesibilidad(), getFundacion());
+        return Objects.hash(getCedula(), getNombre(), getSexo(), getEdad(), getTelefono(), getContraseña(), getFundacion());
     }
 }

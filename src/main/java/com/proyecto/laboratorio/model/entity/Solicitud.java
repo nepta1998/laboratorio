@@ -44,20 +44,23 @@ public class Solicitud {
     @Column
     private Date fecha;
 
+    @Column
+    private  short prioridad;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Date getFecha() {
         return fecha;
     }
 
     public void setFecha(Date fecha) {
         this.fecha = this.fecha;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public double getPresupuesto() {
@@ -108,6 +111,14 @@ public class Solicitud {
         this.fundacion = fundacion;
     }
 
+    public short getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(short prioridad) {
+        this.prioridad = prioridad;
+    }
+
     @Override
     public String toString() {
         return "Solicitud{" +
@@ -119,6 +130,7 @@ public class Solicitud {
                 ", empleado=" + empleado +
                 ", fundacion=" + fundacion +
                 ", fecha=" + fecha +
+                ", prioridad=" + prioridad +
                 '}';
     }
 
@@ -127,9 +139,10 @@ public class Solicitud {
         if (this == o) return true;
         if (!(o instanceof Solicitud)) return false;
         Solicitud solicitud = (Solicitud) o;
-        return getId() == solicitud.getId() &&
-                Double.compare(solicitud.getPresupuesto(), getPresupuesto()) == 0 &&
+        return Double.compare(solicitud.getPresupuesto(), getPresupuesto()) == 0 &&
                 getStatus() == solicitud.getStatus() &&
+                getPrioridad() == solicitud.getPrioridad() &&
+                getId().equals(solicitud.getId()) &&
                 getServicios().equals(solicitud.getServicios()) &&
                 getPersona().equals(solicitud.getPersona()) &&
                 getEmpleado().equals(solicitud.getEmpleado()) &&
@@ -139,6 +152,6 @@ public class Solicitud {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getPresupuesto(), getStatus(), getServicios(), getPersona(), getEmpleado(), getFundacion(), getFecha());
+        return Objects.hash(getId(), getPresupuesto(), getStatus(), getServicios(), getPersona(), getEmpleado(), getFundacion(), getFecha(), getPrioridad());
     }
 }
