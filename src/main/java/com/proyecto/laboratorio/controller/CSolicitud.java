@@ -1,7 +1,9 @@
 package com.proyecto.laboratorio.controller;
 
+import com.proyecto.laboratorio.model.entity.Solicitud;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 
 @Controller
 public class CSolicitud {
@@ -16,7 +18,8 @@ public class CSolicitud {
     }
 
     @GetMapping({"/formRequest"})
-    public String formRequest() {
+    public String formRequest(Model model) {
+        model.addAttribute("solicitud", new Solicitud());
         return"formRequest";
     }
 

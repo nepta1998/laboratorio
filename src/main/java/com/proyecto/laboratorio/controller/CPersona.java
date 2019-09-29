@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CPersona {
 
-    @GetMapping({"/formUser"})
+    /*@GetMapping({"/formUser"})
     public String formUser(Model model) {
         model.addAttribute("usuario", new Persona());
         return"formUser";
-    }
+    }*/
 }
