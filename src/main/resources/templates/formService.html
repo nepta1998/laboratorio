@@ -208,7 +208,7 @@
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Registrar Servicio</h1>
+                                            <h1 class="h4 text-gray-900 mb-4" th:text="${editMode} ?'Actualizar Servicio': 'Registrar Servicio'">Registrar Servicio</h1>
                                         </div>
                                         <form id="servicio" autocomplete="off" class="form" method="post" role="form" th:object="${servicio}" th:action="${editMode} ? @{/editServicio}:@{/formService}">
                                             <input class="form-control" type=hidden th:field="${servicio.id}"  th:if="${editMode}">
