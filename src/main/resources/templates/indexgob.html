@@ -455,26 +455,26 @@
 <script>
 var slider = document.getElementById("customRange1");
 var output = document.getElementById("demo1");
-output.innerHTML = slider.value;
+output.innerHTML = slider.value + '%';
 
 var slider1 = document.getElementById("customRange2");
 var output1 = document.getElementById("demo2");
-output1.innerHTML = slider1.value;
+output1.innerHTML = slider1.value + '%';
 
 var slider3 = document.getElementById("customRange3");
 var output3 = document.getElementById("demo3");
-output3.innerHTML = slider.value;
+output3.innerHTML = slider.value+'%';
 
 slider.oninput = function() {
-    output.innerHTML = this.value;
+    output.innerHTML = this.value + '%';
 }
 
 slider1.oninput = function() {
-    output1.innerHTML = this.value;
+    output1.innerHTML = this.value + '%';
 }
 
 slider3.oninput = function() {
-    output3.innerHTML = this.value;
+    output3.innerHTML = this.value + '%';
 }
 
 </script>

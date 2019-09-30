@@ -20,7 +20,7 @@ public class ServicioServiceImpl implements ServicioService{
 
     @Override
     public Servicio createServicio(Servicio servicio) throws Exception {
-        if(verificarUsuarioExiste(servicio))
+        if(verificarServicioExiste(servicio))
         {
            servicio= servicioRepository.save(servicio);
         }
@@ -58,7 +58,7 @@ public class ServicioServiceImpl implements ServicioService{
     }
 
 
-    private boolean verificarUsuarioExiste(Servicio servicio) throws Exception {
+    private boolean verificarServicioExiste(Servicio servicio) throws Exception {
         Optional<Servicio> servicioEncontrado=servicioRepository.findByNombre(servicio.getNombre());
         if(servicioEncontrado.isPresent())
         {
