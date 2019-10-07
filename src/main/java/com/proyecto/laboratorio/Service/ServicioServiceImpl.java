@@ -55,6 +55,8 @@ public class ServicioServiceImpl implements ServicioService{
         to.setNombre(from.getNombre());
         to.setTipo(from.getTipo());
         to.setCosto(from.getCosto());
+        to.setFechai(from.getFechai());
+        to.setFechaf(from.getFechaf());
     }
 
 

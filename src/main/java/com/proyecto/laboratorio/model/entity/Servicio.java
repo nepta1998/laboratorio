@@ -1,10 +1,12 @@
 package com.proyecto.laboratorio.model.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.util.Objects;
 
 @Entity
@@ -24,6 +26,17 @@ public class Servicio {
     @Column
     @NotNull
     private double costo;
+
+    //@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Column
+    @NotNull
+    private Date fechai;
+
+    //@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Column
+    @NotNull
+    private Date fechaf;
+
 
     public Long getId() {
         return id;
@@ -57,29 +70,19 @@ public class Servicio {
         this.costo = costo;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Servicio)) return false;
-        Servicio servicio = (Servicio) o;
-        return getId() == servicio.getId() &&
-                getTipo() == servicio.getTipo() &&
-                Double.compare(servicio.getCosto(), getCosto()) == 0 &&
-                getNombre().equals(servicio.getNombre());
+    public Date getFechai() {
+        return fechai;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getNombre(), getTipo(), getCosto());
+    public void setFechai(Date fechai) {
+        this.fechai = fechai;
     }
 
-    @Override
-    public String toString() {
-        return "Servicio{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", tipo=" + tipo +
-                ", costo=" + costo +
-                '}';
+    public Date getFechaf() {
+        return fechaf;
+    }
+
+    public void setFechaf(Date fechaf) {
+        this.fechaf = fechaf;
     }
 }

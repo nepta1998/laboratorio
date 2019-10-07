@@ -217,6 +217,8 @@
                       <th>Nombre</th>
                       <th>Tipo</th>
                       <th>Costo</th>
+                      <th>Fecha Inicial</th>
+                      <th>Fecha Final</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -226,6 +228,8 @@
                       <th>Nombre</th>
                       <th>Tipo</th>
                       <th>Costo</th>
+                      <th>Fecha Inicial</th>
+                      <th>Fecha Final</th>
                       <th></th>
                     </tr>
                   </tfoot>
@@ -238,6 +242,8 @@
                           <span th:case="'d'">Donación</span>
                       </td>
                       <td th:text="${servicio.costo}"></td>
+                      <td th:text="${servicio.fechai}"></td>
+                      <td th:text="${servicio.fechaf}"></td>
                       <td>
                           <span><a href="#" th:href="@{'/editServicio'+ ${servicio.id}}"><i class="fas fa-edit"></i></a></span>
                           <span>|<a href="#" th:onclick="'javaScript:confirmDelete(\''+${servicio.id}+ '\');'"><i class="fas fa-trash-alt" style="color:red"></i></a></span>    

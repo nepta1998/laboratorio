@@ -258,6 +258,28 @@
                                                     </div>
                                                 </div>
                                              </div>
+                                             <div class="form-group row">
+                                                 <label for="example-date-input" class="col-sm-3 control-label"><b>Fecha Inicial:<sup>*</sup></b></label>
+                                                 <div class="col-sm-9 mb-3 mb-sm-0">
+                                                     <div class="form-group input-group">
+                                                         <div class="input-group-append">
+                                                             <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                         </div>
+                                                         <input pattern = "yyyy-MM-dd" class="form-control" type="date" id="example-date-input" th:field="*{fechai}" required>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="form-group row">
+                                                 <label for="example-date-input1" class="col-sm-3 control-label"><b>Fecha Final:<sup>*</sup></b></label>
+                                                 <div class="col-sm-9 mb-3 mb-sm-0">
+                                                     <div class="form-group input-group">
+                                                         <div class="input-group-append">
+                                                             <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                         </div>
+                                                         <input pattern="yyyy-MM-dd" class="form-control" type="date" id="example-date-input1" th:field="*{fechaf}" required> 
+                                                     </div>
+                                                 </div>
+                                             </div>
                                              <div class="alert alert-danger text-center" th:if="${errorMessage}" th:text="${errorMessage}">Error Message</div>
                                              <hr style="opacity:0" />
                                              <hr style="opacity:0" />
