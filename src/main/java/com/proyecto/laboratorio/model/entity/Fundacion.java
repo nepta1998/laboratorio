@@ -22,11 +22,11 @@ public class Fundacion {
     @JoinColumn(name="gobernacion_Id", nullable=false)
     private Gobernacion gobernacion;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,5 +46,11 @@ public class Fundacion {
         this.presupuesto = presupuesto;
     }
 
+    public Gobernacion getGobernacion() {
+        return gobernacion;
+    }
 
+    public void setGobernacion(Gobernacion gobernacion) {
+        this.gobernacion = gobernacion;
+    }
 }
