@@ -5,6 +5,7 @@ Aplicación Web para una gobernación ficticia que permite llevar la gestión de
 Hecho en Spring Boot, utilizando Bootstrap como Framework de CSS. Aplicando patrón de diseño MVC (Model-View-Controller).
 
 Hecho por:
+
 Neptalí Piña. @nepta1998
 
 José Luis Pacheco. @joclpacheb
