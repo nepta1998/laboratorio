@@ -156,11 +156,10 @@ public class CSolicitud {
     }
 
     @GetMapping("/tableRequestE")
-    public String getSolicitudes(Model model,
-                                 @RequestParam(value = "status")char status)
+    public String getSolicitudes(Model model, @RequestParam(value = "status")char status)
     {
-
-        model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
+        System.out.println(status);
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByStatus(status));
         return"tableRequest";
     }
 

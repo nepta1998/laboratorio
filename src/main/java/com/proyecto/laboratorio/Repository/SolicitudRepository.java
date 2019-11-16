@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface SolicitudRepository extends CrudRepository<Solicitud,Long> {
-    public Optional<Solicitud>findByStatus(char status);
+    public Iterable<Solicitud>findByStatus(char status);
 }

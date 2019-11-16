@@ -17,8 +17,8 @@ public class SolicitudServiceImpl implements SolicitudService{
     }
 
     @Override
-    public Iterable<Solicitud> getSolicitudesByStatus() {
-        return solicitudRepository.;
+    public Iterable<Solicitud> getSolicitudesByStatus(char status) {
+        return solicitudRepository.findByStatus(status);
     }
 
     @Override
