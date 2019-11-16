@@ -1,6 +1,7 @@
 package com.proyecto.laboratorio.Service;
 
 import com.proyecto.laboratorio.Repository.SolicitudRepository;
+import com.proyecto.laboratorio.model.entity.Fundacion;
 import com.proyecto.laboratorio.model.entity.Solicitud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,11 @@ public class SolicitudServiceImpl implements SolicitudService{
     @Override
     public Iterable<Solicitud> getSolicitudesByStatus(char status) {
         return solicitudRepository.findByStatus(status);
+    }
+
+    @Override
+    public Iterable<Solicitud> getSolicitudesByFundacion(Fundacion fundacion) {
+        return solicitudRepository.findByFundacion(fundacion);
     }
 
     @Override

@@ -163,5 +163,30 @@ public class CSolicitud {
         return"tableRequest";
     }
 
+    @GetMapping("/tableFunNinnos")
+    public String getSolicitudesfunN(Model model) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(1));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunNinnos";
+    }
+    @GetMapping("/tableFunDisc")
+    public String getSolicitudesfunD(Model model) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(2));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunDisc";
+    }
+
+    @GetMapping("/tableFunMujer")
+    public String getSolicitudesfunM(Model model) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"/tableFunMujer";
+    }
+
+
+
 }
 

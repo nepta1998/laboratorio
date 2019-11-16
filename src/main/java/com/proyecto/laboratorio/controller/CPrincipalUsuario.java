@@ -16,7 +16,7 @@ public class CPrincipalUsuario {
         return"indexgob";
     }
 
-    @GetMapping({"/tableFunDisc"})
+   /* @GetMapping({"/tableFunDisc"})
     public String tableFunDisc() {
         return"tableFunDisc";
     }
@@ -29,5 +29,5 @@ public class CPrincipalUsuario {
     @GetMapping({"/tableFunNinnos"})
     public String tableFunNinnos() {
         return"tableFunNinnos";
-    }
+    }*/
 }
