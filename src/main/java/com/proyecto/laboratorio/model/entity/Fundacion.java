@@ -16,7 +16,7 @@ public class Fundacion {
     @Column
     private String nombre;
     @Column
-    private double presupuesto;
+    private double porcentaje;
 
     @ManyToOne
     @JoinColumn(name="gobernacion_Id", nullable=false)
@@ -39,11 +39,11 @@ public class Fundacion {
     }
 
     public double getPresupuesto() {
-        return presupuesto;
+        return porcentaje;
     }
 
-    public void setPresupuesto(double presupuesto) {
-        this.presupuesto = presupuesto;
+    public void setPresupuesto(double porcentaje) {
+        this.porcentaje = porcentaje;
     }
 
     public Gobernacion getGobernacion() {

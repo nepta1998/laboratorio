@@ -211,7 +211,7 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Registrar Empleado</h1>
                                         </div>
-                                        <form id="usuario" autocomplete="off" class="form" method="post" role="form" >
+                                        <form id="usuario" autocomplete="off" class="form" method="post" role="form" th:object="${empleado}" th:action="${editMode} ? @{/editEmpleado}:@{/formUser}">
                                             <div class="form-group row">
                                                 <label for="cedula"
                                                        class="col-sm-3 control-label"><b>Cédula:<sup>*</sup></b></label>
@@ -221,14 +221,14 @@
                                                             <span class="input-group-text"><i class="far fa-id-card"></i></span>
                                                         </div>
                                                         <div class="input-group-append">
-                                                            <select class="input-group-text">
+                                                            <select class="input-group-text" th:name="tipCed" th:value="${tipCedula}">
                                                                 <option value="V">V</option>
                                                                 <option value="E">E</option>
                                                                 <option value="J">J</option>
                                                             </select>
                                                         </div>
                                                         <input type="text" class="form-control" id="cedula"
-                                                               placeholder="Cedula" required>
+                                                               th:placeholder="Cedula" required th:name="ced" th:value="${cedula}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,7 +241,7 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><b>N</b></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre"  required>
+                                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:field="*{nombre}" required>
                                                     </div>
                                                 </div>
 
@@ -254,7 +254,7 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
                                                         </div>
-                                                        <select class="form-control">
+                                                        <select class="form-control" th:field="*{sexo}">
                                                             <option th:value="'f'">Femenino</option>
                                                             <option th:value="'m'">Masculino</option>
                                                         </select>
@@ -270,7 +270,7 @@
                                                             <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
                                                         </div>
                                                         <input type="number" step="any" class="form-control"
-                                                               id="edad" placeholder="Edad"  required>
+                                                               id="edad" placeholder="Edad"  required th:field="*{edad}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,15 +283,15 @@
                                                             <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
                                                         </div>
                                                         <div class="input-group-append">
-                                                            <select class="input-group-text">
-                                                                <option value="MO">0414</option>
-                                                                <option value="MO2">0424</option>
-                                                                <option value="MOV">0416</option>
-                                                                <option value="MOV2">0426</option>
-                                                                <option value="DI">0412</option>
+                                                            <select class="input-group-text" th:name="codTlf" th:value="${codigoTlf}">
+                                                                <option th:value="0414">0414</option>
+                                                                <option th:value="0424">0424</option>
+                                                                <option th:value="0416">0416</option>
+                                                                <option th:value="0426">0426</option>
+                                                                <option th:value="0412">0412</option>
                                                             </select>
                                                         </div>
-                                                        <input type="number" step="any" class="form-control" id="telefono" placeholder="Telefono"  required>
+                                                        <input type="number" step="any" class="form-control" id="telefono" placeholder="Telefono"  th:name="telefono" th:value="${telefono1}" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -302,19 +302,33 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text"><i class="fas fa-hospital-alt"></i></span>
                                                         </div>
-                                                        <select id="fundacion" class="form-control">
-                                                            <option>Niño</option>
-                                                            <option>Mujer</option>
-                                                            <option>Discapacitado</option>
+                                                        <select id="fundacion" class="form-control" th:name="fundacion" th:value="${fundacion1}">
+                                                            <option value="1">Fundación de Ayuda a Niños, Niñas y Adolescentes</option>
+                                                            <option value="2">Fundación de Atención al Discapacitado</option>
+                                                            <option value="3"> Fundación Regional de la Mujer</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="edad"
+                                                    class="col-sm-3 control-label"><b>Contraseña:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-lock"></i></span>
+                                                        </div>
+                                                        <input type="password" step="any" class="form-control" id="Contraseña"
+                                                            placeholder="Contraseña" required th:field="*{contraseña}">
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="alert alert-danger text-center" th:if="${errorMessage}"  th:text="${errorMessage}">Error Message</div>
+                                            <div class="alert  alert-success text-center" th:if="${exitoMessage}"  th:text="${exitoMessage}">Error Message</div>
                                             <hr style="opacity:0" />
                                             <hr style="opacity:0" />
-                                            <button type="submit" class="btn btn-info btn-block" >
-                                                Registrar
+                                            <button type="submit" class="btn btn-info btn-block" th:text="${editMode} ?'Actualizar': 'Registrar'">
                                             </button>
                                         </form>
                                         <hr style="opacity:0" />

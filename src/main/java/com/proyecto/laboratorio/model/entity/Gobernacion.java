@@ -12,6 +12,9 @@ public class Gobernacion {
     @Column
     private double partidaAnual;
 
+    @OneToMany(mappedBy="gobernacion")
+    private Set<Fundacion> fundacion;
+
     public Set<Fundacion> getFundacion() {
         return fundacion;
     }
@@ -19,9 +22,6 @@ public class Gobernacion {
     public void setFundacion(Set<Fundacion> fundacion) {
         this.fundacion = fundacion;
     }
-
-    @OneToMany(mappedBy="gobernacion")
-    private Set<Fundacion> fundacion;
 
     public String getEstado() {
         return estado;

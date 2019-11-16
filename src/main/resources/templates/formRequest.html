@@ -213,26 +213,28 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <!--data table-->
-                                            <div class="card shadow mb-4">
-                                                <div class="card-header py-3"> <i class="fas fa-table"></i>
-                                                    <span>Servicios</span>
-                                                </div>
-                                                <div class="card-header py-3">
-                                                    <div class="form-group input-group">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-sort"></i></span>
-                                                        </div>
-                                                        <select class="form-control">
-                                                            <option th:value="'m'">Médico</option>
-                                                            <option th:value="'d'">Donación</option>
-                                                        </select>
+                                            <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:object="${servicio}" th:action="@{/formRequest1}">
+                                                <div class="card shadow mb-4">
+                                                    <div class="card-header py-3"> <i class="fas fa-table"></i>
+                                                        <span>Servicios</span>
                                                     </div>
-                                                </div>
-                                                <div class="card-header py-3">
-                                                    <button type="submit" class="btn btn-info btn-block">Agregar
-                                                    </button>
-                                                </div>
+                                                    <div class="card-header py-3">
+                                                        <div class="form-group input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i
+                                                                        class="fas fa-sort"></i></span>
+                                                            </div>
+                                                            <select class="form-control" th:name="serv">
+                                                                <option th:each="servicio:${servicioList}" th:value="${servicio.id}"th:text="${servicio.nombre}"></option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-header py-3">
+                                                        <button type="submit" class="btn btn-info btn-block">Agregar
+                                                        </button>
+                                                    </div>
+                                            </form>
+                                            
                                                 <div class="card-body">
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered" id="dataTable" width="100%"
@@ -256,24 +258,13 @@
                                                                 </tr>
                                                             </tfoot>
                                                             <tbody>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>Medico</td>
-                                                                    <td>2000</td>
+                                                                <tr th:each="servicio: ${servicioList1}">
+                                                                    <td th:text="${servicio.id}" ></td>
+                                                                    <td th:text="${servicio.nombre}"></td>
+                                                                    <td th:text="${servicio.tipo}"></td>
+                                                                    <td th:text="${servicio.costo}"></td>
                                                                     <td>
-                                                                        <span><a href="#"><i
-                                                                                    class="fas fa-trash-alt"></i></a></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>1</td>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>Medico</td>
-                                                                    <td>2000</td>
-                                                                    <td>
-                                                                        <span><a href="#"><i
-                                                                                    class="fas fa-trash-alt"></i></a></span>
+                                                                        <span><a href="#"><iclass="fas fa-trash-alt"></i></a></span>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -288,8 +279,7 @@
                                                 <div class="text-center">
                                                     <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
                                                 </div>
-                                                <form id="servicio" autocomplete="off" class="form" method="post"
-                                                    role="form">
+                                                <form id="solicitud" autocomplete="off" class="form" method="post" role="form" th:object="${solicitud}">
                                                     <div class="form-group row">
                                                         <label for="cedula"
                                                             class="col-sm-3 control-label"><b>Cédula:<sup>*</sup></b></label>
@@ -317,8 +307,7 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><b>N</b></span>
                                                                 </div>
-                                                                <input type="text" class="form-control" id="nombre"
-                                                                    placeholder="Nombre" required>
+                                                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required >
                                                             </div>
                                                         </div>
 
@@ -330,7 +319,7 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
                                                                 </div>
-                                                                <select class="form-control">
+                                                                <select class="form-control" >
                                                                     <option th:value="'f'">Femenino</option>
                                                                     <option th:value="'m'">Masculino</option>
                                                                 </select>
@@ -347,7 +336,7 @@
                                                                             class="fas fa-birthday-cake"></i></span>
                                                                 </div>
                                                                 <input type="number" step="any" class="form-control"
-                                                                    id="edad" placeholder="Edad" required>
+                                                                    id="edad" placeholder="Edad" required >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -381,10 +370,10 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                                 </div>
-                                                                <select id="prioridad" class="form-control">
-                                                                    <option th:value="0">Alta</option>
-                                                                    <option th:value="1">Media</option>
-                                                                    <option th:value="2">Baja</option>
+                                                                <select id="prioridad" class="form-control" th:field="*{prioridad}">
+                                                                    <option th:value="'3'">Alta</option>
+                                                                    <option th:value="'1'">Media</option>
+                                                                    <option th:value="'2'">Baja</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -399,7 +388,7 @@
                                                                             class="fas fa-dollar-sign"></i></span>
                                                                 </div>
                                                                 <input type="number" step="any" class="form-control"
-                                                                    id="total" placeholder="Total" disabled required>
+                                                                    id="total" placeholder="Total" disabled required th:value="${total}" th:field="${solicitud.presupuesto}">
                                                             </div>
                                                         </div>
                                                     </div>
