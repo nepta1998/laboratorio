@@ -32,7 +32,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
     }
 
     @Override
-    public Empleado updateServicio(Empleado empleado) throws Exception {
+    public Empleado updateEmpleado(Empleado empleado) throws Exception {
         Empleado encontrarEmpleado=getEmpleadoById(empleado.getCedula());
         mapEmpleado(empleado,encontrarEmpleado);
         return empleadoRepository.save(encontrarEmpleado);
@@ -48,7 +48,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
         to.setNombre(from.getNombre());
         to.setSexo(from.getSexo());
         to.setEdad(from.getEdad());
-        to.setTelefono(from.getContraseña());
+        to.setContraseña(from.getContraseña());
         to.setTelefono(from.getTelefono());
         to.setFundacion(from.getFundacion());
     }

@@ -261,7 +261,10 @@
                                                                 <tr th:each="servicio: ${servicioList1}">
                                                                     <td th:text="${servicio.id}" ></td>
                                                                     <td th:text="${servicio.nombre}"></td>
-                                                                    <td th:text="${servicio.tipo}"></td>
+                                                                    <td th:switch="${servicio.tipo}">
+                                                                        <span th:case="'m'">Médico</span>
+                                                                        <span th:case="'d'">Donación</span>
+                                                                    </td>
                                                                     <td th:text="${servicio.costo}"></td>
                                                                     <td>
                                                                         <span><a href="#"><iclass="fas fa-trash-alt"></i></a></span>
@@ -279,7 +282,7 @@
                                                 <div class="text-center">
                                                     <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
                                                 </div>
-                                                <form id="solicitud" autocomplete="off" class="form" method="post" role="form" th:object="${solicitud}">
+                                                <form id="solicitud" autocomplete="off" class="form" method="post" role="form" th:object="${persona}" th:action="${editMode} ? @{/editRequest}:@{/formRequest}">
                                                     <div class="form-group row">
                                                         <label for="cedula"
                                                             class="col-sm-3 control-label"><b>Cédula:<sup>*</sup></b></label>
@@ -288,14 +291,7 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i class="far fa-id-card"></i></span>
                                                                 </div>
-                                                                <div class="input-group-append">
-                                                                    <select class="input-group-text">
-                                                                        <option value="V">V</option>
-                                                                        <option value="E">E</option>
-                                                                        <option value="J">J</option>
-                                                                    </select>
-                                                                </div>
-                                                                <input type="text" class="form-control" id="cedula" placeholder="Cedula" required>
+                                                                <input type="text" class="form-control" id="cedula" placeholder="Cedula"  th:field="*{cedula}" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -307,7 +303,7 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><b>N</b></span>
                                                                 </div>
-                                                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required >
+                                                                <input type="text" class="form-control" id="nombre" placeholder="Nombre"  th:field="*{nombre}" required >
                                                             </div>
                                                         </div>
 
@@ -319,7 +315,7 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
                                                                 </div>
-                                                                <select class="form-control" >
+                                                                <select class="form-control" th:field="*{sexo}">
                                                                     <option th:value="'f'">Femenino</option>
                                                                     <option th:value="'m'">Masculino</option>
                                                                 </select>
@@ -336,7 +332,7 @@
                                                                             class="fas fa-birthday-cake"></i></span>
                                                                 </div>
                                                                 <input type="number" step="any" class="form-control"
-                                                                    id="edad" placeholder="Edad" required >
+                                                                    id="edad" placeholder="Edad"  th:field="*{edad}" required >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -349,17 +345,8 @@
                                                                     <span class="input-group-text"><i
                                                                             class="fas fa-phone-alt"></i></span>
                                                                 </div>
-                                                                <div class="input-group-append">
-                                                                    <select class="input-group-text">
-                                                                        <option value="MO">0414</option>
-                                                                        <option value="MO2">0424</option>
-                                                                        <option value="MOV">0416</option>
-                                                                        <option value="MOV2">0426</option>
-                                                                        <option value="DI">0412</option>
-                                                                    </select>
-                                                                </div>
                                                                 <input type="number" step="any" class="form-control"
-                                                                    id="telefono" placeholder="Telefono" required>
+                                                                    id="telefono" placeholder="Telefono"  th:field="*{telefono}" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -370,30 +357,32 @@
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i class="fas fa-clock"></i></span>
                                                                 </div>
-                                                                <select id="prioridad" class="form-control" th:field="*{prioridad}">
-                                                                    <option th:value="'3'">Alta</option>
+                                                                <select id="prioridad" class="form-control" th:name="prioridad">
+                                                                    <option th:value="'0'">Alta</option>
                                                                     <option th:value="'1'">Media</option>
                                                                     <option th:value="'2'">Baja</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
+                                                   <!-- <div class="form-group row">
                                                         <label for="total"
                                                             class="col-sm-3 control-label"><b>Total:<sup>*</sup></b></label>
                                                         <div class="col-sm-9 mb-3 mb-sm-0">
                                                             <div class="form-group input-group">
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text"><i
-                                                                            class="fas fa-dollar-sign"></i></span>
+                                                                            class="fas fa-calendar"></i></span>
                                                                 </div>
-                                                                <input type="number" step="any" class="form-control"
-                                                                    id="total" placeholder="Total" disabled required th:value="${total}" th:field="${solicitud.presupuesto}">
+                                                                <input type="date" step="any" class="form-control"
+                                                                    id="total" placeholder="Fecha"  required th:name="fecha">
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>-->
                                                     <div class="alert alert-danger text-center" th:if="${errorMessage}"
                                                         th:text="${errorMessage}">Error Message</div>
+                                                    <div class="alert alert-success text-center" th:if="${exitoMessage}"
+                                                        th:text="${exitoMessage}">Error Message</div>
                                                     <hr style="opacity:0" />
                                                     <hr style="opacity:0" />
                                                     <button type="submit" class="btn btn-info btn-block">

@@ -17,7 +17,7 @@ public class SolicitudServiceImpl implements SolicitudService{
     }
 
     @Override
-    public Solicitud createServicio(Solicitud solicitud) throws Exception {
+    public Solicitud createSolicitud(Solicitud solicitud) throws Exception {
         if(verificarSolicitudExiste(solicitud))
         {
             solicitud= solicitudRepository.save(solicitud);

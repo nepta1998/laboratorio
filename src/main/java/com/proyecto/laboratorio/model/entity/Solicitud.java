@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -12,8 +13,8 @@ import java.util.Set;
 public class Solicitud {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native",strategy = "native")
+    //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    //@GenericGenerator(name = "native",strategy = "native")
     private  Long id;
 
     @Column
@@ -26,7 +27,7 @@ public class Solicitud {
     @JoinTable(name = "servicio_solicitud",
     joinColumns = @JoinColumn(name = "solicitud_id"),
     inverseJoinColumns = @JoinColumn(name = "servicio_id"))
-    private Set<Servicio> servicios;
+    private List<Servicio> servicios;
 
     @ManyToOne
     @JoinColumn(name="beneficiario_cedula", nullable=false)
@@ -40,7 +41,7 @@ public class Solicitud {
     @JoinColumn(name="fundacion_Id", nullable=false)
     private Fundacion fundacion;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @DateTimeFormat(pattern = "YYYY-MM-DD")
     @Column
     private Date fecha;
 
@@ -60,7 +61,7 @@ public class Solicitud {
     }
 
     public void setFecha(Date fecha) {
-        this.fecha = this.fecha;
+        this.fecha = fecha;
     }
 
     public double getPresupuesto() {
@@ -79,11 +80,11 @@ public class Solicitud {
         this.status = status;
     }
 
-    public Set<Servicio> getServicios() {
+    public List<Servicio> getServicios() {
         return servicios;
     }
 
-    public void setServicios(Set<Servicio> servicios) {
+    public void setServicios(List<Servicio> servicios) {
         this.servicios = servicios;
     }
 
@@ -117,6 +118,15 @@ public class Solicitud {
 
     public void setPrioridad(short prioridad) {
         this.prioridad = prioridad;
+    }
+
+    public Long totalSolicitudes(Iterable<Solicitud> solicitudes)
+    {
+        Long contador=new Long(0);
+        for (Object i:solicitudes) {
+            contador++;
+        }
+        return contador;
     }
 
     @Override
