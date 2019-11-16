@@ -204,40 +204,81 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
-
+                    <h1 class="h3 mb-2 text-gray-800">Solicitudes</h1>
+                    <p class="mb-4">Filtrado por status las solicitudes hacer click en el icono para aceptar la solicitud</p>
+                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestE}">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3"> <i class="fas fa-table"></i>
+                                <span>Estatus</span>
+                            </div>
+                            <div class="card-header py-3">
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                    </div>
+                                    <select class="form-control" th:name="status">
+                                        <option value="'p'">pendientes</option>
+                                        <option value="a">aceptadas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-header py-3">
+                                <button type="submit" class="btn btn-info btn-block">Filtrar</button>
+                            </div>
+                    </form>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>id</th>
+                                            <th>fecha</th>
+                                            <th>Presupuesto</th>
+                                            <th>prioridad</th>
+                                            <th>status</th>
+                                            <th>cedula_Empleado</th>
+                                            <th>Fundacion_id</th>
+                                            <th>Beneficiario_cedula</th>
+                                            <th>Aceptar</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>id</th>
+                                            <th>fecha</th>
+                                            <th>Presupuesto</th>
+                                            <th>prioridad</th>
+                                            <th>status</th>
+                                            <th>cedula_Empleado</th>
+                                            <th>Fundacion_id</th>
+                                            <th>Beneficiario_cedula</th>
+                                            <th>Aceptar</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        <tr th:each="solicitud: ${solicitudList}">
+                                            <td th:text="${solicitud.id}"></td>
+                                            <td th:text="${solicitud.fecha}"></td>
+                                            <td th:text="${solicitud.presupuesto}"></td>
+                                            <td th:switch="${solicitud.prioridad}">
+                                                <span th:case="'0'">Alta</span>
+                                                <span th:case="'1'">Media</span>
+                                                <span th:case="'2'">Baja</span>
+                                            </td>
+                                            <td th:switch="${solicitud.status}">
+                                                <span th:case="'p'">Pendiente</span>
+                                                <span th:case="'a'">Aceptada</span>
+                                            </td>
+                                            <td th:text="${solicitud.empleado.cedula}"></td>
+                                            <td th:text="${solicitud.fundacion.nombre}"></td>
+                                            <td th:text="${solicitud.persona.cedula}"></td>
+                                            <td th:switch="${solicitud.status}">
+                                                <span th:case="'p'"><a href="#" th:href="@{'/tableRequest'+ ${solicitud.id}}"><i class="fas fa-check-circle"></i></a></span>
+                                                <span th:case="'a'" style="color:red"> Aceptada</span>
+                                            </td>
+                                        </tr>
                                         
                                     </tbody>
                                 </table>

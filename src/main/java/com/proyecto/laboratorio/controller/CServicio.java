@@ -90,7 +90,7 @@ public class CServicio {
         return"formService";
     }
     @GetMapping("/deleteServicio{id}")
-    public String deleteSercvicio(Model model, @PathVariable(name="id")Long id)
+    public String deleteServicio(Model model, @PathVariable(name="id")Long id)
     {
         try {
             servicioService.deleteServicio(id);

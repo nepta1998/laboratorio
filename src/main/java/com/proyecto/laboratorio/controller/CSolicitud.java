@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.Date;
@@ -37,7 +34,8 @@ public class CSolicitud {
     FundacionService fundacionService;
 
     @GetMapping({"/tableRequest"})
-    public String tableRequest() {
+    public String tableRequest(Model model) {
+        model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
         return"tableRequest";
     }
 
@@ -53,6 +51,7 @@ public class CSolicitud {
         agregarServicio.deleteAll();
         return"formRequest";
     }
+
     @GetMapping({"/formRequest1"})
     public String formRequest1(@Valid @ModelAttribute("personaForm")Persona persona, ModelMap model,
                                @RequestParam(value = "serv")Long serv) throws Exception {
@@ -144,6 +143,25 @@ public class CSolicitud {
         }
         //model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
         return"formRequest";
+    }
+
+    @GetMapping("/tableRequest{id}")
+    public String getEditSolicitud(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('a');
+        solicitudService.updateSolicitud(solicitud);
+        model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
+        return"tableRequest";
+    }
+
+    @GetMapping("/tableRequestE")
+    public String getSolicitudes(Model model,
+                                 @RequestParam(value = "status")char status)
+    {
+
+        model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
+        return"tableRequest";
     }
 
 }

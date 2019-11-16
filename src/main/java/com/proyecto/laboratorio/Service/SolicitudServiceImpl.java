@@ -17,6 +17,11 @@ public class SolicitudServiceImpl implements SolicitudService{
     }
 
     @Override
+    public Iterable<Solicitud> getSolicitudesByStatus() {
+        return solicitudRepository.;
+    }
+
+    @Override
     public Solicitud createSolicitud(Solicitud solicitud) throws Exception {
         if(verificarSolicitudExiste(solicitud))
         {
