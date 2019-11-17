@@ -6,6 +6,7 @@ import com.proyecto.laboratorio.model.entity.Solicitud;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,16 @@ public class SolicitudServiceImpl implements SolicitudService{
     @Override
     public Iterable<Solicitud> getSolicitudesByStatus(char status) {
         return solicitudRepository.findByStatus(status);
+    }
+
+    @Override
+    public Iterable<Solicitud> getSolicitudesByFecha(Date fecha1, Date fecha2) {
+        return solicitudRepository.findByFechaBetween(fecha1,fecha2);
+    }
+
+    @Override
+    public Iterable<Solicitud> getSolicitudesByFechaAndFundacion(Date fecha1, Date fecha2, Fundacion fundacion) {
+        return solicitudRepository.findByFechaBetweenAndFundacion(fecha1,fecha2,fundacion);
     }
 
     @Override
