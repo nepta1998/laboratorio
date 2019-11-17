@@ -11,9 +11,9 @@ public class CPrincipalUsuario {
         return"index";
     }*/
 
-    @GetMapping({"/indexgob"})
+    @GetMapping({"/index"})
     public String index() {
-        return"indexgob";
+        return "index";
     }
 
    /* @GetMapping({"/tableFunDisc"})
