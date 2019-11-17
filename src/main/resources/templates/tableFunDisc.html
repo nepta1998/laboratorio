@@ -222,6 +222,30 @@
                         <li class="breadcrumb-item active">Fondos Utilizados: 1000 Bs</li>
                     </ol>
 
+                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableFunDiscF}">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3"> <i class="fas fa-table"></i>
+                                <span>Fecha</span>
+                            </div>
+                            <div class="card-header py-3">
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                    </div>
+                                    <input class="form-control" type="date" id="example-date-input" th:name="fecha1"
+                                        required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                    </div>
+                                    <input class="form-control" type="date" id="example-date-input" th:name="fecha2"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="card-header py-3">
+                                <button type="submit" class="btn btn-info btn-block">Filtrar</button>
+                            </div>
+                    </form>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -276,14 +300,14 @@
                                             <td th:text="${solicitud.persona.cedula}"></td>
                                             <td th:switch="${solicitud.status}">
                                                 <span th:case="'p'"><a href="#"
-                                                        th:href="@{'/tableRequest'+ ${solicitud.id}}"><i
+                                                        th:href="@{'/tableFunDisc'+ ${solicitud.id}}"><i
                                                             class="fas fa-check-circle"></i></a></span>
                                                 <span th:case="'a'" style="color:red"> Aceptada</span>
                                             </td>
                                         </tr>
-
                                     </tbody>
                                 </table>
+                                 <input class="form-control" type="number" step="any" min="0" value="0" th:if="${totalSolicitudes}" th:value="${totalSolicitudes}" disabled  required>
                             </div>
                         </div>
                     </div>

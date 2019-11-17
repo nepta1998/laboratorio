@@ -105,7 +105,7 @@ public class CSolicitud {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
 
-                Empleado empleado=empleadoService.getEmpleadoById("26136058");
+                Empleado empleado=empleadoService.getEmpleadoById("26262");
                 Solicitud solicitud=new Solicitud();
 
                 personaService.createPersona(persona);
@@ -163,6 +163,25 @@ public class CSolicitud {
         return"tableRequest";
     }
 
+    @GetMapping("/tableRequestF")
+    public String getSolicitudesF(Model model,
+                                  @RequestParam(value = "fecha1") java.sql.Date fecha1,
+                                  @RequestParam(value = "fecha2") java.sql.Date fecha2)
+    {
+        Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFecha(fecha1,fecha2);
+        double total=0;
+        for (Solicitud sol:solicitudes)
+        {
+            System.out.println(sol.getPresupuesto());
+            total=total+sol.getPresupuesto();
+        }
+        System.out.println(fecha1);
+        System.out.println(fecha2);
+        model.addAttribute("solicitudList",solicitudes);
+        model.addAttribute("totalSolicitudes",total);
+        return"tableRequest";
+    }
+
     @GetMapping("/tableFunNinnos")
     public String getSolicitudesfunN(Model model) throws Exception {
 
@@ -170,6 +189,39 @@ public class CSolicitud {
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
         return"tableFunNinnos";
     }
+
+    @GetMapping("/tableFunNinnos{id}")
+    public String getEditSolicitudfunN(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('a');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(1));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunNinnos";
+    }
+
+
+    @GetMapping("/tableFunNinnosF")
+    public String getSolicitudesfunNFecha(Model model,
+                                  @RequestParam(value = "fecha1") java.sql.Date fecha1,
+                                  @RequestParam(value = "fecha2") java.sql.Date fecha2) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(1));
+        Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
+        double total=0;
+        for (Solicitud sol:solicitudes)
+        {
+            System.out.println(sol.getPresupuesto());
+            total=total+sol.getPresupuesto();
+        }
+        System.out.println(fecha1);
+        System.out.println(fecha2);
+        model.addAttribute("solicitudList",solicitudes);
+        model.addAttribute("totalSolicitudes",total);
+        return"tableFunNinnos";
+    }
+
     @GetMapping("/tableFunDisc")
     public String getSolicitudesfunD(Model model) throws Exception {
 
@@ -178,11 +230,72 @@ public class CSolicitud {
         return"tableFunDisc";
     }
 
+    @GetMapping("/tableFunDisc{id}")
+    public String getEditSolicitudfunD(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('a');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(2));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunDisc";
+    }
+    @GetMapping("/tableFunDiscF")
+    public String getSolicitudesfunDFecha(Model model,
+                                          @RequestParam(value = "fecha1") java.sql.Date fecha1,
+                                          @RequestParam(value = "fecha2") java.sql.Date fecha2) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(2));
+        Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
+        double total=0;
+        for (Solicitud sol:solicitudes)
+        {
+            System.out.println(sol.getPresupuesto());
+            total=total+sol.getPresupuesto();
+        }
+        System.out.println(fecha1);
+        System.out.println(fecha2);
+        model.addAttribute("solicitudList",solicitudes);
+        model.addAttribute("totalSolicitudes",total);
+        return"tableFunDisc";
+    }
+
     @GetMapping("/tableFunMujer")
     public String getSolicitudesfunM(Model model) throws Exception {
 
         Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"/tableFunMujer";
+    }
+
+    @GetMapping("/tableFunMujer{id}")
+    public String getEditSolicitudfunM(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('a');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"/tableFunMujer";
+    }
+
+    @GetMapping("/tableFunMujerF")
+    public String getSolicitudesfunMFecha(Model model,
+                                          @RequestParam(value = "fecha1") java.sql.Date fecha1,
+                                          @RequestParam(value = "fecha2") java.sql.Date fecha2) throws Exception {
+
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
+        Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
+        double total=0;
+        for (Solicitud sol:solicitudes)
+        {
+            System.out.println(sol.getPresupuesto());
+            total=total+sol.getPresupuesto();
+        }
+        System.out.println(fecha1);
+        System.out.println(fecha2);
+        model.addAttribute("solicitudList",solicitudes);
+        model.addAttribute("totalSolicitudes",total);
         return"/tableFunMujer";
     }
 
