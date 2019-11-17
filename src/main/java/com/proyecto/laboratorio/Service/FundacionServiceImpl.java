@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class FundacionServiceImpl implements FundacionService {
 
@@ -26,5 +28,28 @@ public class FundacionServiceImpl implements FundacionService {
     @Override
     public Fundacion getFundacionById(Long id) throws Exception {
         return fundacionRepository.findById(id).orElseThrow(() -> new  Exception("la fundacion no existe"));
+    }
+
+    @Override
+    public Fundacion updateFundacion(Fundacion funcdacion) throws Exception {
+        Fundacion encontrarFundacion=getFundacionById(funcdacion.getId());
+        mapFundacion(funcdacion,encontrarFundacion);
+        return fundacionRepository.save(encontrarFundacion);
+    }
+
+    protected void mapFundacion(Fundacion from, Fundacion to){
+        to.setNombre(from.getNombre());
+        to.setGobernacion(from.getGobernacion());
+        to.setPorcentaje(from.getPorcentaje());
+    }
+
+
+    private boolean verificarFundacionExiste(Fundacion fundacion) throws Exception {
+        Optional<Fundacion> servicioEncontrado=fundacionRepository.findById(fundacion.getId());
+        if(servicioEncontrado.isPresent())
+        {
+            throw  new Exception("Fundacion ya esta presente");
+        }
+        return true;
     }
 }

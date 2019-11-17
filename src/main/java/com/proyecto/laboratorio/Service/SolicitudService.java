@@ -1,5 +1,6 @@
 package com.proyecto.laboratorio.Service;
 
+import com.proyecto.laboratorio.model.entity.Empleado;
 import com.proyecto.laboratorio.model.entity.Fundacion;
 import com.proyecto.laboratorio.model.entity.Solicitud;
 
@@ -12,6 +13,7 @@ public interface SolicitudService {
     public Iterable<Solicitud> getSolicitudesByFecha(Date fecha1,Date fecha2);
     public Iterable<Solicitud> getSolicitudesByFechaAndFundacion(Date fecha1,Date fecha2,Fundacion fundacion);
     public Iterable<Solicitud> getSolicitudesByFundacion(Fundacion fundacion);
+    public Iterable<Solicitud> getSolicitudesByEmpleado(Empleado empleado);
     public  Solicitud createSolicitud(Solicitud solicitud) throws Exception;
     public  Solicitud getSolicitudById(Long id) throws Exception;
     public  Solicitud updateSolicitud(Solicitud solicitud) throws Exception;

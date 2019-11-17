@@ -15,7 +15,8 @@ import java.util.Date;
 @Controller
 public class CSolicitud {
 
-
+    ImplementorSolicitud[] imp={new Solicitud(),new Fundacion()};
+    AbstraccionSolicitud abst[]= {new RefinedAbstractionSolicitud(imp[0]),new RefinedAbstractionSolicitud(imp[1])};
     AgregarServicio agregarServicio=AgregarServicioImpl.Instance();
 
     @Autowired
@@ -36,13 +37,11 @@ public class CSolicitud {
     @GetMapping({"/tableRequest"})
     public String tableRequest(Model model) {
         model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
+        model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
         return"tableRequest";
     }
 
-    @GetMapping({"/tableBeneficiario"})
-    public String tableBeneficiario() {
-        return"tableBeneficiario";
-    }
+
 
     @GetMapping({"/formRequest"})
     public String formRequest(Model model) {
@@ -118,7 +117,9 @@ public class CSolicitud {
                 solicitud.setStatus('p');
                 solicitud.setPresupuesto(acumulador);
 
-                solicitud.setId(solicitud.totalSolicitudes(solicitudService.getAllSolicitudes()));
+                Long ide=(long)abst[0].contador_acumulador(solicitudService.getAllSolicitudes());
+
+                solicitud.setId(ide);
 
 
                 solicitudService.createSolicitud(solicitud);
@@ -151,6 +152,7 @@ public class CSolicitud {
         Solicitud solicitud= solicitudService.getSolicitudById(id);
         solicitud.setStatus('a');
         solicitudService.updateSolicitud(solicitud);
+        model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
         model.addAttribute("solicitudList",solicitudService.getAllSolicitudes());
         return"tableRequest";
     }
@@ -159,6 +161,7 @@ public class CSolicitud {
     public String getSolicitudes(Model model, @RequestParam(value = "status")char status)
     {
         System.out.println(status);
+        model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByStatus(status));
         return"tableRequest";
     }
@@ -169,16 +172,21 @@ public class CSolicitud {
                                   @RequestParam(value = "fecha2") java.sql.Date fecha2)
     {
         Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFecha(fecha1,fecha2);
-        double total=0;
-        for (Solicitud sol:solicitudes)
-        {
-            System.out.println(sol.getPresupuesto());
-            total=total+sol.getPresupuesto();
-        }
+        double total=abst[1].contador_acumulador(solicitudes);
         System.out.println(fecha1);
         System.out.println(fecha2);
+        model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
         model.addAttribute("solicitudList",solicitudes);
         model.addAttribute("totalSolicitudes",total);
+        return"tableRequest";
+    }
+
+    @GetMapping("/tableRequestEmp")
+    public String getSolicitudesEmp(Model model,
+                                    @RequestParam(value = "emp")String emp) throws Exception {
+        System.out.println(emp);
+        model.addAttribute("empleadoList",empleadoService.getAllEmpleados());
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByEmpleado(empleadoService.getEmpleadoById(emp)));
         return"tableRequest";
     }
 
@@ -209,12 +217,7 @@ public class CSolicitud {
 
         Fundacion fundacion=fundacionService.getFundacionById(new Long(1));
         Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
-        double total=0;
-        for (Solicitud sol:solicitudes)
-        {
-            System.out.println(sol.getPresupuesto());
-            total=total+sol.getPresupuesto();
-        }
+        double total=abst[1].contador_acumulador(solicitudes);
         System.out.println(fecha1);
         System.out.println(fecha2);
         model.addAttribute("solicitudList",solicitudes);
@@ -247,12 +250,7 @@ public class CSolicitud {
 
         Fundacion fundacion=fundacionService.getFundacionById(new Long(2));
         Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
-        double total=0;
-        for (Solicitud sol:solicitudes)
-        {
-            System.out.println(sol.getPresupuesto());
-            total=total+sol.getPresupuesto();
-        }
+        double total=abst[1].contador_acumulador(solicitudes);
         System.out.println(fecha1);
         System.out.println(fecha2);
         model.addAttribute("solicitudList",solicitudes);
@@ -286,12 +284,7 @@ public class CSolicitud {
 
         Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
         Iterable<Solicitud> solicitudes=solicitudService.getSolicitudesByFechaAndFundacion(fecha1,fecha2,fundacion);
-        double total=0;
-        for (Solicitud sol:solicitudes)
-        {
-            System.out.println(sol.getPresupuesto());
-            total=total+sol.getPresupuesto();
-        }
+        double total=abst[1].contador_acumulador(solicitudes);
         System.out.println(fecha1);
         System.out.println(fecha2);
         model.addAttribute("solicitudList",solicitudes);

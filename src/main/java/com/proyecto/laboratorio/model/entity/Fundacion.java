@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Fundacion {
+public class Fundacion implements ImplementorSolicitud{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native",strategy = "native")
@@ -38,11 +38,11 @@ public class Fundacion {
         this.nombre = nombre;
     }
 
-    public double getPresupuesto() {
+    public double getPorcentaje() {
         return porcentaje;
     }
 
-    public void setPresupuesto(double porcentaje) {
+    public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
 
@@ -52,5 +52,15 @@ public class Fundacion {
 
     public void setGobernacion(Gobernacion gobernacion) {
         this.gobernacion = gobernacion;
+    }
+
+    public double contador_acumulador(Iterable<Solicitud> solicitudes)
+    {
+        double total=0;
+        for (Solicitud sol:solicitudes)
+        {
+            total=total+sol.getPresupuesto();
+        }
+        return total;
     }
 }

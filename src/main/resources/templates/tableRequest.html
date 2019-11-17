@@ -247,6 +247,25 @@
                                 <button type="submit" class="btn btn-info btn-block">Filtrar</button>
                             </div>
                     </form>
+                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestEmp}">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3"> <i class="fas fa-table"></i>
+                                <span>Empleado</span>
+                            </div>
+                            <div class="card-header py-3">
+                                <div class="form-group input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                    </div>
+                                    <select class="form-control" th:name="emp">
+                                        <option th:each="empleado:${empleadoList}" th:value="${empleado.cedula}"th:text="${empleado.nombre}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-header py-3">
+                                <button type="submit" class="btn btn-info btn-block">Filtrar</button>
+                            </div>
+                    </form>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
@@ -260,8 +279,9 @@
                                             <th>prioridad</th>
                                             <th>status</th>
                                             <th>cedula_Empleado</th>
-                                            <th>Fundacion_id</th>
+                                            <th>Fundacion_Nombre</th>
                                             <th>Beneficiario_cedula</th>
+                                            <th>Beneficiario_nombre</th>
                                             <th>Aceptar</th>
                                         </tr>
                                     </thead>
@@ -273,8 +293,9 @@
                                             <th>prioridad</th>
                                             <th>status</th>
                                             <th>cedula_Empleado</th>
-                                            <th>Fundacion_id</th>
+                                            <th>Fundacion_Nombre</th>
                                             <th>Beneficiario_cedula</th>
+                                            <th>Beneficiario_nombre</th>
                                             <th>Aceptar</th>
                                         </tr>
                                     </tfoot>
@@ -295,6 +316,7 @@
                                             <td th:text="${solicitud.empleado.cedula}"></td>
                                             <td th:text="${solicitud.fundacion.nombre}"></td>
                                             <td th:text="${solicitud.persona.cedula}"></td>
+                                            <td th:text="${solicitud.persona.nombre}"></td>
                                             <td th:switch="${solicitud.status}">
                                                 <span th:case="'p'"><a href="#" th:href="@{'/tableRequest'+ ${solicitud.id}}"><i class="fas fa-check-circle"></i></a></span>
                                                 <span th:case="'a'" style="color:red"> Aceptada</span>

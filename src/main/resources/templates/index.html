@@ -264,71 +264,28 @@
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Nombre</th>
-                                                        <th>Presupesto</th>
                                                         <th>Porcentaje</th>
-
                                                     </tr>
                                                     </thead>
                                                     <tfoot>
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Nombre</th>
-                                                        <th>Presupesto</th>
                                                         <th>Porcentaje</th>
                                                     </tr>
                                                     </tfoot>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Mujer</td>
-                                                        <td>2000</td>
-                                                        <td>
-                                                            <label for="Mujer" class="mr-2">20%</label>
-                                                            <div class="progress">
-                                                                <div id="Mujer"
-                                                                     class="progress-bar bg-gradient-custom-2"
-                                                                     role="progressbar" style="width: 30%"
-                                                                     aria-valuenow="30" aria-valuemin="0"
-                                                                     aria-valuemax="100"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Niño</td>
-                                                        <td>2000</td>
-                                                        <td>
-                                                            <label for="Ninno" class="mr-2">50%</label>
-                                                            <div class="progress">
-                                                                <div id="Ninno"
-                                                                     class="progress-bar bg-gradient-primary"
-                                                                     role="progressbar" style="width: 30%"
-                                                                     aria-valuenow="30" aria-valuemin="0"
-                                                                     aria-valuemax="100"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Discapacitados</td>
-                                                        <td>2000</td>
-                                                        <td>
-                                                            <label for="Discapacitado" class="mr-2">30%</label>
-                                                            <div class="progress">
-                                                                <div id="Discapacitado"
-                                                                     class="progress-bar bg-gradient-success"
-                                                                     role="progressbar" style="width: 40%"
-                                                                     aria-valuenow="40" aria-valuemin="0"
-                                                                     aria-valuemax="100"></div>
-                                                            </div>
-                                                        </td>
+                                                    <tr th:each="fundacion: ${fundacionList}">
+                                                        <td th:text="${fundacion.id}"></td>
+                                                        <td th:text="${fundacion.nombre}"></td>
+                                                        <td th:text="${fundacion.porcentaje}"></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
-                                    <h1 class="h3 mb-2 text-gray-800">Total de presupuesto: 500000</h1>
+                                    <h1 class="h3 mb-2 text-gray-800" th:text="'Total de presupuesto:'+${total}"></h1>
                                     <!--formulario presupuesto-->
                                     <div class="card o-hidden border-0 shadow-lg my-5">
                                         <div class="card-body ">
@@ -337,7 +294,8 @@
                                                     <div class="text-center">
                                                         <h1 class="h4 text-gray-900 mb-4">Actualizar presupuesto:</h1>
                                                     </div>
-                                                    <form role="form" class="form">
+
+                                                   <form role="form" class="form" method="post"   th:object="${gobernacion}" th:action="@{/index}">
                                                         <div class="form-group row">
                                                             <label for="presupuesto" class="col-sm-4 control-label"><b>Cantidad:<sup>*</sup></b></label>
                                                             <div class="col-sm-8 mb-3 mb-sm-0">
@@ -345,10 +303,13 @@
                                                                     <div class="input-group-append">
                                                                         <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                                                                     </div>
-                                                                    <input type="number" step="any" class="form-control" id="presupuesto" placeholder="Cantidad" required>
+                                                                    <input type="number" step="any" min="0" class="form-control" id="presupuesto" placeholder="Cantidad" th:field="*{partidaAnual}" required>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="alert alert-danger text-center" th:if="${errorMessage}"  th:text="${errorMessage}">Error Message</div>
+                                                        <div class="alert  alert-success text-center" th:if="${exitoMessage}"  th:text="${exitoMessage}">Error Message</div>
+                                                        <hr style="opacity:0" />
                                                         <hr style="opacity:0" />
                                                         <button type="submit" class="btn btn-info btn-block">
                                                             Actualizar presupuesto
@@ -373,28 +334,32 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <form role="form" class="form">
+                                <form role="form" class="form" method="get" th:action="@{/index1}">
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="customRange1">Fundación de la mujer </label>
-                                            <input type="range" class="custom-range custom-range-1" id="customRange1" >
+                                            <input type="range" class="custom-range custom-range-1" id="customRange1" th:name="porcentaje1">
                                             <span id="demo1" ></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="customRange1">Fundacion del niño </label>
-                                            <input type="range" class="custom-range" id="customRange2" >
-                                            <span id="demo2" ></span>
+                                            <input type="range" class="custom-range" id="customRange2" th:name="porcentaje2">
+                                            <span id="demo2"></span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label for="customRange1">Fundación de discapacitados </label>
-                                            <input type="range" class="custom-range custom-range-teal" id="customRange3">
+                                            <input type="range" class="custom-range custom-range-teal" id="customRange3" th:name="porcentaje3">
                                             <span id="demo3" ></span>
                                         </div>
                                     </div>
+                                    <div class="alert alert-danger text-center" th:if="${errorMessage1}"  th:text="${errorMessage1}">Error Message</div>
+                                    <div class="alert  alert-success text-center" th:if="${exitoMessage1}"  th:text="${exitoMessage1}">Error Message</div>
+                                    <hr style="opacity:0" />
+                                     <hr style="opacity:0" />
                                     <button type="submit" class="btn btn-info btn-block">Actualizar porcentaje</button>
                                 </form>
 

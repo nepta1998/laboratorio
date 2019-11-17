@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Solicitud {
+public class Solicitud implements ImplementorSolicitud{
 
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -120,9 +120,17 @@ public class Solicitud {
         this.prioridad = prioridad;
     }
 
-    public Long totalSolicitudes(Iterable<Solicitud> solicitudes)
+    /*public Long totalSolicitudes(Iterable<Solicitud> solicitudes)
     {
         Long contador=new Long(0);
+        for (Object i:solicitudes) {
+            contador++;
+        }
+        return contador;
+    }*/
+    public double contador_acumulador(Iterable<Solicitud> solicitudes)
+    {
+        double contador=0;
         for (Object i:solicitudes) {
             contador++;
         }

@@ -331,8 +331,8 @@
                                                                     <span class="input-group-text"><i
                                                                             class="fas fa-birthday-cake"></i></span>
                                                                 </div>
-                                                                <input type="number" step="any" class="form-control"
-                                                                    id="edad" placeholder="Edad"  th:field="*{edad}" required >
+                                                                <input type="number"  class="form-control"
+                                                                    min="0" max="120" id="edad" placeholder="Edad" th:field="*{edad}" required >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -345,7 +345,7 @@
                                                                     <span class="input-group-text"><i
                                                                             class="fas fa-phone-alt"></i></span>
                                                                 </div>
-                                                                <input type="number" step="any" class="form-control"
+                                                                <input type="number"  class="form-control"
                                                                     id="telefono" placeholder="Telefono"  th:field="*{telefono}" required>
                                                             </div>
                                                         </div>
