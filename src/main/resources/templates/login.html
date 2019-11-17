@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
 
@@ -37,35 +38,41 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">INICIAR SESIÓN!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">¡INICIAR SESIÓN!</h1>
                   </div>
-                  <form class="user"  th:action="@{/index}" method="GET">
+                  <form class="form login" th:action="@{/login}" method="post">
                     <div class="form-group input-group">
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fas fa-user" style="color:#e74a3b"></i></span>
                       </div>
-                      <input
+                      <label for="username"></label><input
                               type="text"
                               class="form-control form-control-user"
-                              id="exampleInputEmail"
-                              aria-describedby="emailHelp"
+                              id="username"
+                              aria-describedby="userHelp"
                               placeholder="Enter user..."
-                              required>
+                              name="username"
+                              required/>
                     </div>
                     <div class="form-group input-group">
                       <div class="input-group-append">
                         <span class="input-group-text"><i class="fas fa-lock" style="color:#e74a3b"></i></span>
                       </div>
-                      <input
+                      <label for="exampleInputPassword"></label><input
                               type="password"
                               class="form-control form-control-user"
                               id="exampleInputPassword"
                               placeholder="password"
-                              required>
-                              
+                              name="password"
+                              required/>
+
                     </div>
+
+                    <p th:if="${param.error}">Usuario y contraseña invalidos</p>
+                    <p th:if="${param.logout}">Has cerrado sesión</p>
                     <hr style="opacity:0" />
                     <hr style="opacity:0" />
+
                     <button type="submit" class="btn btn-danger btn-user btn-block">
                       Login
                     </button>
