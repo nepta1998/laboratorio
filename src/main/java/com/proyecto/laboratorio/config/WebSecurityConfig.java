@@ -13,20 +13,31 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    String[] resources = new String[]{
+            "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**","/imagenes/**","/scss/**","/vendor/**"
+    };
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers(resources).permitAll()
+                .antMatchers("/", "/index").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .defaultSuccessUrl("/index")
+                .failureUrl("/login?error=true")
+                .usernameParameter("username")
+                .passwordParameter("password")
                 .and()
+                .csrf().disable()
                 .logout()
-                .permitAll();
+                .permitAll()
+                .logoutSuccessUrl("/login?logout");
     }
 
     @Bean

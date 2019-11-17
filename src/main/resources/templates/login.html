@@ -67,15 +67,18 @@
                               required/>
 
                     </div>
-
-                    <p th:if="${param.error}">Usuario y contraseña invalidos</p>
-                    <p th:if="${param.logout}">Has cerrado sesión</p>
                     <hr style="opacity:0" />
                     <hr style="opacity:0" />
-
+                      <div th:if="${param.error}">
+                          Invalid username and password.
+                      </div>
+                      <div th:if="${param.logout}">
+                          You have been logged out.
+                      </div>
                     <button type="submit" class="btn btn-danger btn-user btn-block">
                       Login
                     </button>
+
                     <hr style="opacity:0" />
                   </form>
                   <hr style="opacity:0" />
