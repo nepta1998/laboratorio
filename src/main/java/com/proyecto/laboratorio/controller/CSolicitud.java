@@ -3,6 +3,8 @@ package com.proyecto.laboratorio.controller;
 import com.proyecto.laboratorio.Service.*;
 import com.proyecto.laboratorio.model.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -104,7 +106,11 @@ public class CSolicitud {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
 
-                Empleado empleado=empleadoService.getEmpleadoById("26262");
+
+                Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+
+                Empleado empleado=empleadoService.getEmpleadoById(auth.getName());
                 Solicitud solicitud=new Solicitud();
 
                 personaService.createPersona(persona);
