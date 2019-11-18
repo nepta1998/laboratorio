@@ -47,6 +47,7 @@ public class CSolicitud {
     public String formRequest(Model model) {
         model.addAttribute("persona", new Persona());
         model.addAttribute("servicioList",servicioService.getAllServicios());
+        model.addAttribute("empleadoList1",empleadoService.getAllEmpleados());
         agregarServicio.deleteAll();
         return"formRequest";
     }
@@ -69,16 +70,16 @@ public class CSolicitud {
             agregarServicio.agregarServicio(service);
             model.addAttribute("servicioList1", agregarServicio.getAll());
             model.addAttribute("servicioList",servicioService.getAllServicios());
+            model.addAttribute("empleadoList1",empleadoService.getAllEmpleados());
             model.addAttribute("persona", persona);
         }
         else
         {
             model.addAttribute("servicioList1", agregarServicio.getAll());
             model.addAttribute("servicioList",servicioService.getAllServicios());
+            model.addAttribute("empleadoList1",empleadoService.getAllEmpleados());
             model.addAttribute("persona", persona);
         }
-
-
         return"formRequest";
     }
 
@@ -86,7 +87,8 @@ public class CSolicitud {
 
     @PostMapping({"/formRequest"})
     public String createServicio(@Valid @ModelAttribute("solicitudForm") Persona persona, BindingResult result, ModelMap model,
-                                 @RequestParam(value = "prioridad")short prioridad)
+                                 @RequestParam(value = "prioridad")short prioridad,
+                                 @RequestParam(value = "emp")String emp)
     {
         if (result.hasErrors()) {
             model.addAttribute("persona", persona);
@@ -104,7 +106,7 @@ public class CSolicitud {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
 
-                Empleado empleado=empleadoService.getEmpleadoById("26262");
+                Empleado empleado=empleadoService.getEmpleadoById(emp);
                 Solicitud solicitud=new Solicitud();
 
                 personaService.createPersona(persona);
@@ -124,6 +126,7 @@ public class CSolicitud {
 
                 solicitudService.createSolicitud(solicitud);
                 model.addAttribute("servicioList",servicioService.getAllServicios());
+                model.addAttribute("empleadoList1",empleadoService.getAllEmpleados());
                 model.addAttribute("persona", new Persona());
                 agregarServicio.deleteAll();
                 model.addAttribute("servicioList1", agregarServicio.getAll());
@@ -138,6 +141,7 @@ public class CSolicitud {
                 model.addAttribute("errorMessage",e.getMessage());
                 model.addAttribute("persona", persona);
                 model.addAttribute("servicioList1", agregarServicio.getAll());
+                model.addAttribute("empleadoList1",empleadoService.getAllEmpleados());
                 model.addAttribute("servicioList",servicioService.getAllServicios());
 
             }

@@ -38,4 +38,6 @@ public class Gobernacion {
     public void setPartidaAnual(double partidaAnual) {
         this.partidaAnual = partidaAnual;
     }
+
+
 }
