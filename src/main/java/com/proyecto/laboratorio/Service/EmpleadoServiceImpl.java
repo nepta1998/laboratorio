@@ -54,7 +54,7 @@ public class EmpleadoServiceImpl implements EmpleadoService{
     }
 
 
-    private boolean verificarEmpleadoExiste(Empleado Empledo) throws Exception {
+    public boolean verificarEmpleadoExiste(Empleado Empledo) throws Exception {
         Optional<Empleado> servicioEncontrado=empleadoRepository.findById(Empledo.getCedula());
         if(servicioEncontrado.isPresent())
         {

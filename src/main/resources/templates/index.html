@@ -201,8 +201,8 @@
                 </ol>
 
                 <!-- Icon Cards-->
-                <div class="row justify-content-center">
-                    <div  sec:authorize="hasRole('ADMIN')" class="col-xl-3 col-sm-6 mb-3">
+                <div sec:authorize="hasRole('ADMIN')" class="row justify-content-center">
+                    <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-primary o-hidden h-100">
                             <div class="card-body">
                                 <div class="card-body-icon">
@@ -285,9 +285,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h1 class="h3 mb-2 text-gray-800" th:text="'Total de presupuesto:'+${total}"></h1>
+                                    <h1  class="h3 mb-2 text-gray-800" th:text="'Total de presupuesto:'+${total}"></h1>
                                     <!--formulario presupuesto-->
-                                    <div class="card o-hidden border-0 shadow-lg my-5">
+                                    <div  class="card o-hidden border-0 shadow-lg my-5">
                                         <div class="card-body ">
                                             <div class="row justify-content-center">
                                                 <div class="p-5">
@@ -326,7 +326,7 @@
                         </div>
                     </div>
                     <!-- Fundacion change-->
-                    <div class="col-xl-4 col-lg-5">
+                    <div  class="col-xl-4 col-lg-5">
                         <div class="card shadow mb-4">
                             <!-- Card Header-->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
