@@ -1,5 +1,7 @@
 package com.proyecto.laboratorio.Service;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.proyecto.laboratorio.Repository.UserRepository;
@@ -29,20 +31,21 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         com.proyecto.laboratorio.model.entity.User appUser =
                 userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User does not exist!"));
 
-        Set grantList = new HashSet();
-
+       // Set grantList = new HashSet();
+        Set<GrantedAuthority> grantList = new HashSet<>();
         //Crear la lista de los roles/accessos que tienen el usuarios
         for (Role role: appUser.getRoles()) {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getDescription());
+            //List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
+            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getName());
             grantList.add(grantedAuthority);
         }
 
         //Crear y retornar Objeto de usuario soportado por Spring Security
-        UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
-        return user;
-
-
+      //  UserDetails user = (UserDetails) new User(appUser.getUsername(), appUser.getPassword(), grantList);
+        //return user;
+        return new User(appUser.getUsername(), appUser.getPassword(), grantList);
 
     }
+
 
 }

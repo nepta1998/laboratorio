@@ -54,9 +54,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return bCryptPasswordEncoder;
     }*/
 
-    @Autowired
+   @Autowired
     UserDetailsServiceImpl userDetailsService;
 
+  //@Autowired
+  //private UserDetailsService userDetailsServiceImpl;
 
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
     {
