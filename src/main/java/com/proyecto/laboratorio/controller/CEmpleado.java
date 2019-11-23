@@ -67,8 +67,10 @@ public class CEmpleado {
                 user.setPassword(empleado.getContraseña());
                 int id=fundacion.intValue();
 
+               //Set<Role> roles = new HashSet<>();
                 Set<Role> roles = new HashSet<>();
                 Role rol = new Role();
+                //Set<Role> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 
                 if(id == 1){
                     rol = roleRepository.findByName("Usuario_1");
@@ -101,11 +103,14 @@ public class CEmpleado {
                 empleadoService.createEmpleado(empleado);
                 userService.createUser(user);
                 model.addAttribute("empleado", new Empleado());
+                model.addAttribute("roles", roles);
+                model.addAttribute("roles", new Role());
                 model.addAttribute("exitoMessage","registro exitoso");
             } catch (Exception e) {
                 model.addAttribute("errorMessage",e.getMessage());
                 model.addAttribute("fundacion1",fundacion);
                 model.addAttribute("empleado", empleado);
+                model.addAttribute("roles", new Role());
 
             }
         //model.addAttribute("empleadoList",empleadoService.getAllEmpleados());

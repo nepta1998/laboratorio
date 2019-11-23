@@ -14,8 +14,8 @@
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -24,467 +24,459 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-custom-1 sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-custom-1 sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/index}">
-                <div class="sidebar-brand-icon ">
-                    <i class="fas fa-city"></i>
-                    <!--<i class="fas fa-laugh-wink"></i>-->
-                </div>
-                <div class="sidebar-brand-text mx-3">Gobernación de Lara</div>
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/index}">
+            <div class="sidebar-brand-icon ">
+                <i class="fas fa-city"></i>
+                <!--<i class="fas fa-laugh-wink"></i>-->
+            </div>
+            <div class="sidebar-brand-text mx-3">Gobernación de Lara</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" th:href="@{/index}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Tablas
+        </div>
+
+        <!-- Nav Item - tables Collapse Listas -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Listados</span>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/index}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                tablas
-            </div>
-
-            <!-- Nav Item - tables Collapse Listas -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Listados</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Solicitudes:</h6>
-                        <a class="collapse-item" th:href=" @{/tableRequest}">
-                            <i class="fas fa-folder-open"></i>
-                            <span>Solicitudes</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Servicios:</h6>
-                        <a class="collapse-item " th:href="@{/tableService}">
-                            <i class="fas fa-syringe"></i>
-                            <span>Servicios</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Beneficiarios:</h6>
-                        <a class="collapse-item" th:href="@{/tableBeneficiario}">
-                            <i class="fas fa-users"></i>
-                            <span>Beneficiarios</span>
-                        </a>
-                    </div>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Solicitudes:</h6>
+                    <a class="collapse-item" th:href=" @{/tableRequest}">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Solicitudes</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Servicios:</h6>
+                    <a class="collapse-item " th:href="@{/tableService}">
+                        <i class="fas fa-syringe"></i>
+                        <span>Servicios</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Beneficiarios:</h6>
+                    <a class="collapse-item" th:href="@{/tableBeneficiario}">
+                        <i class="fas fa-users"></i>
+                        <span>Beneficiarios</span>
+                    </a>
                 </div>
-            </li>
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                registrar
             </div>
+        </li>
 
-            <!-- Nav Item - forms Collapse Formularios -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList"
-                    aria-expanded="true" aria-controls="collapseList">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Formularios</span>
-                </a>
-                <div id="collapseList" class="collapse show" aria-labelledby="headingList"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Solicitud:</h6>
-                        <a class="collapse-item active" th:href="@{/formRequest}">
-                            <i class="fas fa-file-signature"></i>
-                            <span>Registrar solicitud</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Servicio:</h6>
-                        <a class="collapse-item " th:href="@{/formService}">
-                            <i class="fas fa-syringe"></i>
-                            <span>Registrar servicio</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Empleado:</h6>
-                        <a class="collapse-item" th:href="@{/formUser}">
-                            <i class="fas fa-user"></i>
-                            <span>Registrar empleado</span>
-                        </a>
-                    </div>
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Registrar
+        </div>
+
+        <!-- Nav Item - forms Collapse Formularios -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList"
+               aria-expanded="true" aria-controls="collapseList">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Formularios</span>
+            </a>
+            <div id="collapseList" class="collapse show" aria-labelledby="headingList"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Solicitud:</h6>
+                    <a class="collapse-item active" th:href="@{/formRequest}">
+                        <i class="fas fa-file-signature"></i>
+                        <span>Registrar solicitud</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Servicio:</h6>
+                    <a class="collapse-item " th:href="@{/formService}">
+                        <i class="fas fa-syringe"></i>
+                        <span>Registrar servicio</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Empleado:</h6>
+                    <a class="collapse-item" th:href="@{/formUser}">
+                        <i class="fas fa-user"></i>
+                        <span>Registrar empleado</span>
+                    </a>
                 </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Comprimir Sidebar-->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+        </li>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Comprimir Sidebar-->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
-            <!-- Main Content -->
-            <div id="content">
+    </ul>
+    <!-- End of Sidebar -->
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+        <!-- Main Content -->
+        <div id="content">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
                                     </div>
-                                </form>
-                            </div>
-                        </li>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
-                                <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">[[${#httpServletRequest.remoteUser}]]</span>
+                            <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <!--<div class="dropdown-divider"></div>-->
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Salir
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <!--<div class="dropdown-divider"></div>-->
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
+                        </div>
+                    </li>
 
-                    </ul>
+                </ul>
 
-                </nav>
-                <!-- End of Topbar -->
+            </nav>
+            <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
+            <!-- Begin Page Content -->
 
-                <div class="container-fluid ">
-                    <!-- Page Heading -->
-                    <div class="row justify-content-center">
+            <div class="container-fluid ">
+                <!-- Page Heading -->
+                <div class="row justify-content-center">
 
-                        <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="col-xl-10 col-lg-12 col-md-9">
 
-                            <div class="card o-hidden border-0 shadow-lg my-5">
-                                <div class="card-body p-0">
-                                    <!-- Nested Row within Card Body -->
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <!--data table-->
-                                            <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:object="${servicio}" th:action="@{/formRequest1}">
-                                                <div class="card shadow mb-4">
-                                                    <div class="card-header py-3"> <i class="fas fa-table"></i>
-                                                        <span>Servicios</span>
-                                                    </div>
-                                                    <div class="card-header py-3">
-                                                        <div class="form-group input-group">
-                                                            <div class="input-group-append">
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <!--data table-->
+                                        <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:object="${servicio}" th:action="@{/formRequest0}">
+                                            <div class="card shadow mb-4">
+                                                <div class="card-header py-3"><i class="fas fa-table"></i>
+                                                    <span>Servicios</span>
+                                                </div>
+                                                <div class="card-header py-3">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
                                                                 <span class="input-group-text"><i
                                                                         class="fas fa-sort"></i></span>
-                                                            </div>
-                                                            <select class="form-control" th:name="serv">
-                                                                <option th:each="servicio:${servicioList}" th:value="${servicio.id}"th:text="${servicio.nombre}"></option>
-                                                            </select>
                                                         </div>
+                                                        <select class="form-control" th:name="serv">
+                                                            <option th:each="servicio:${servicioList}"
+                                                                    th:value="${servicio.id}"
+                                                                    th:text="${servicio.nombre}"></option>
+                                                        </select>
                                                     </div>
-                                                    <div class="card-header py-3">
-                                                        <button type="submit" class="btn btn-info btn-block">Agregar
-                                                        </button>
-                                                    </div>
-                                            </form>
-                                            
-                                                <div class="card-body">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered" id="dataTable" width="100%"
-                                                            cellspacing="0">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>#</th>
-                                                                    <th>Nombre</th>
-                                                                    <th>Tipo</th>
-                                                                    <th>Costo</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <th>#</th>
-                                                                    <th>Nombre</th>
-                                                                    <th>Tipo</th>
-                                                                    <th>Costo</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </tfoot>
-                                                            <tbody>
-                                                                <tr th:each="servicio: ${servicioList1}">
-                                                                    <td th:text="${servicio.id}" ></td>
-                                                                    <td th:text="${servicio.nombre}"></td>
-                                                                    <td th:switch="${servicio.tipo}">
-                                                                        <span th:case="'m'">Médico</span>
-                                                                        <span th:case="'d'">Donación</span>
-                                                                    </td>
-                                                                    <td th:text="${servicio.costo}"></td>
-                                                                    <td>
-                                                                        <span><a href="#"><iclass="fas fa-trash-alt"></i></a></span>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                </div>
+                                                <div class="card-header py-3">
+                                                    <button type="submit" class="btn btn-info btn-block">Agregar
+                                                    </button>
+                                                </div>
+                                        </form>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="dataTable" width="100%"
+                                                       cellspacing="0">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Nombre</th>
+                                                        <th>Tipo</th>
+                                                        <th>Costo</th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Nombre</th>
+                                                        <th>Tipo</th>
+                                                        <th>Costo</th>
+                                                        <th></th>
+                                                    </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                    <tr th:each="servicio: ${servicioList1}">
+                                                        <td th:text="${servicio.id}"></td>
+                                                        <td th:text="${servicio.nombre}"></td>
+                                                        <td th:switch="${servicio.tipo}">
+                                                            <span th:case="'m'">Médico</span>
+                                                            <span th:case="'d'">Donación</span>
+                                                        </td>
+                                                        <td th:text="${servicio.costo}"></td>
+                                                        <td>
+                                                            <span><a th:href="@{'/formRequest'+${servicio.id}}"><i class="fas fa-trash-alt"></i></a></span>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end data table-->
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
+                                        </div>
+                                        <form id="solicitud" autocomplete="off" class="form" method="post" role="form" th:object="${solicitud}"th:action="${editMode} ? @{/editRequest}:@{/formRequest}">
+                                            <div class="form-group row">
+                                                <label for="cedula" class="col-sm-3 control-label"><b>Cédula:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="far fa-id-card"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="cedula" placeholder="Cedula" th:field="${solicitud.persona.cedula}" required>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end data table-->
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="p-5">
-                                                <div class="text-center">
-                                                    <h1 class="h4 text-gray-900 mb-4">Solicitud</h1>
+                                            <div class="form-group row">
+                                                <label for="nombre" class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><b>N</b></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="nombre"
+                                                               placeholder="Nombre" th:field="${solicitud.persona.nombre}" required>
+                                                    </div>
                                                 </div>
-                                                <form id="solicitud" autocomplete="off" class="form" method="post" role="form" th:object="${persona}" th:action="${editMode} ? @{/editRequest}:@{/formRequest}">
-                                                    <div class="form-group row">
-                                                        <label for="cedula"
-                                                            class="col-sm-3 control-label"><b>Cédula:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><i class="far fa-id-card"></i></span>
-                                                                </div>
-                                                                <input type="text" class="form-control" id="cedula" placeholder="Cedula"  th:field="*{cedula}" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="nombre"
-                                                            class="col-sm-3 control-label"><b>Nombre:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><b>N</b></span>
-                                                                </div>
-                                                                <input type="text" class="form-control" id="nombre" placeholder="Nombre"  th:field="*{nombre}" required >
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="nombre" class="col-sm-3 control-label"><b>Sexo:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
-                                                                </div>
-                                                                <select class="form-control" th:field="*{sexo}">
-                                                                    <option th:value="'f'">Femenino</option>
-                                                                    <option th:value="'m'">Masculino</option>
-                                                                </select>
-                                                            </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="nombre" class="col-sm-3 control-label"><b>Sexo:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-venus-mars"></i></span>
                                                         </div>
+                                                        <select class="form-control" th:field="${solicitud.persona.sexo}">
+                                                            <option th:value="'f'">Femenino</option>
+                                                            <option th:value="'m'">Masculino</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label for="edad"
-                                                            class="col-sm-3 control-label"><b>Edad:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="edad"
+                                                       class="col-sm-3 control-label"><b>Edad:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
                                                                     <span class="input-group-text"><i
                                                                             class="fas fa-birthday-cake"></i></span>
-                                                                </div>
-                                                                <input type="number"  class="form-control"
-                                                                    min="0" max="120" id="edad" placeholder="Edad" th:field="*{edad}" required >
-                                                            </div>
                                                         </div>
+                                                        <input type="number" class="form-control"
+                                                               min="0" max="120" id="edad" placeholder="Edad"
+                                                               th:field="${solicitud.persona.edad}" required>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label for="telefono"
-                                                            class="col-sm-3 control-label"><b>Teléfono:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="telefono"
+                                                       class="col-sm-3 control-label"><b>Teléfono:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
                                                                     <span class="input-group-text"><i
                                                                             class="fas fa-phone-alt"></i></span>
-                                                                </div>
-                                                                <input type="number"  class="form-control"
-                                                                    id="telefono" placeholder="Telefono"  th:field="*{telefono}" required>
-                                                            </div>
                                                         </div>
+                                                        <input type="number" class="form-control"
+                                                               id="telefono" placeholder="Telefono"
+                                                               th:field="${solicitud.persona.telefono}"
+                                                               required>
                                                     </div>
-                                                    <div class="form-group row">
-                                                        <label for="prioridad" class="col-sm-3 control-label"><b>Prioridad:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                                                                </div>
-                                                                <select id="prioridad" class="form-control" th:name="prioridad">
-                                                                    <option th:value="'0'">Alta</option>
-                                                                    <option th:value="'1'">Media</option>
-                                                                    <option th:value="'2'">Baja</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                     <div class="form-group row">
-                                                        <label for="prioridad" class="col-sm-3 control-label"><b>Empleado:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><i class="fas fa-sort"></i></span>
-                                                                </div>
-                                                                <select class="form-control" th:name="emp">
-                                                                    <option th:each="empleado:${empleadoList1}" th:value="${empleado.cedula}"th:text="${empleado.nombre}"></option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                   <!-- <div class="form-group row">
-                                                        <label for="total"
-                                                            class="col-sm-3 control-label"><b>Total:<sup>*</sup></b></label>
-                                                        <div class="col-sm-9 mb-3 mb-sm-0">
-                                                            <div class="form-group input-group">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text"><i
-                                                                            class="fas fa-calendar"></i></span>
-                                                                </div>
-                                                                <input type="date" step="any" class="form-control"
-                                                                    id="total" placeholder="Fecha"  required th:name="fecha">
-                                                            </div>
-                                                        </div>
-                                                    </div>-->
-                                                    <div class="alert alert-danger text-center" th:if="${errorMessage}"
-                                                        th:text="${errorMessage}">Error Message</div>
-                                                    <div class="alert alert-success text-center" th:if="${exitoMessage}"
-                                                        th:text="${exitoMessage}">Error Message</div>
-                                                    <hr style="opacity:0" />
-                                                    <hr style="opacity:0" />
-                                                    <button type="submit" class="btn btn-info btn-block">
-                                                        Registrar
-                                                    </button>
-                                                </form>
-                                                <hr style="opacity:0" />
+                                                </div>
                                             </div>
-                                        </div>
+                                            <div class="form-group row">
+                                                <label for="prioridad"
+                                                       class="col-sm-3 control-label"><b>Prioridad:<sup>*</sup></b></label>
+                                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                                    <div class="form-group input-group">
+                                                        <div class="input-group-append">
+                                                        <span class="input-group-text"><i
+                                                                class="fas fa-clock"></i></span>
+                                                        </div>
+                                                        <select id="prioridad" class="form-control" th:field="${solicitud.prioridad}">
+                                                            <option th:value="'0'">Alta</option>
+                                                            <option th:value="'1'">Media</option>
+                                                            <option th:value="'2'">Baja</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="form-group row">
+                                                 <label for="total"
+                                                     class="col-sm-3 control-label"><b>Total:<sup>*</sup></b></label>
+                                                 <div class="col-sm-9 mb-3 mb-sm-0">
+                                                     <div class="form-group input-group">
+                                                         <div class="input-group-append">
+                                                             <span class="input-group-text"><i
+                                                                     class="fas fa-calendar"></i></span>
+                                                         </div>
+                                                         <input type="date" step="any" class="form-control"
+                                                             id="total" placeholder="Fecha"  required th:name="fecha">
+                                                     </div>
+                                                 </div>
+                                             </div>-->
+                                            <div class="alert alert-danger text-center" th:if="${errorMessage}"
+                                                 th:text="${errorMessage}">Error Message
+                                            </div>
+                                            <div class="alert alert-success text-center" th:if="${exitoMessage}" th:text="${exitoMessage}">Error Message
+                                            </div>
+                                            <hr style="opacity:0"/>
+                                            <hr style="opacity:0"/>
+                                            <button type="submit" class="btn btn-info btn-block">
+                                                Registrar
+                                            </button>
+                                        </form>
+                                        <hr style="opacity:0"/>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
 
                 </div>
+
             </div>
 
-
-
-
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Laboratorio I UCLA DCYT</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" th:href="@{/login}">Logout</a>
-                </div>
-            </div>
         </div>
     </div>
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- End of Main Content -->
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span> &copy; Laboratorio I UCLA DCYT 2019-I</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+</div>
+<!-- End of Content Wrapper -->
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+</div>
+<!-- End of Page Wrapper -->
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-    <!-- Page level plugins 
-    <script src="vendor/chart.js/Chart.min.js"></script>-->
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
-    <!-- Page level custom scripts 
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>-->
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Está seguro que desea salir?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Seleccione "Salir" si desea finalizar su sesión actual.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary" th:href="@{/login}">Salir</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+<!-- Page level plugins
+<script src="vendor/chart.js/Chart.min.js"></script>-->
+
+<!-- Page level custom scripts
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>-->
 
 </body>
 

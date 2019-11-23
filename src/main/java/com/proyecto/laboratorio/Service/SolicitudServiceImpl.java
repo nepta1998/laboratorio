@@ -45,6 +45,11 @@ public class SolicitudServiceImpl implements SolicitudService{
     }
 
     @Override
+    public Iterable<Solicitud> getByFundacionAndStatus(Fundacion fundacion, char status) {
+        return solicitudRepository.findByFundacionAndStatus(fundacion,status);
+    }
+
+    @Override
     public Solicitud createSolicitud(Solicitud solicitud) throws Exception {
         if(verificarSolicitudExiste(solicitud))
         {

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface AgregarServicio {
     void agregarServicio(Servicio servicio);
-    void eliminarServicio(Servicio servicio);
+    void eliminarServicio(int posicion);
     List<Servicio>getAll();
     void deleteAll();
     ServicioIterator getServicioIterator();

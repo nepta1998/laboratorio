@@ -14,6 +14,7 @@ public interface SolicitudService {
     public Iterable<Solicitud> getSolicitudesByFechaAndFundacion(Date fecha1,Date fecha2,Fundacion fundacion);
     public Iterable<Solicitud> getSolicitudesByFundacion(Fundacion fundacion);
     public Iterable<Solicitud> getSolicitudesByEmpleado(Empleado empleado);
+    public  Iterable<Solicitud>getByFundacionAndStatus(Fundacion fundacion,char status);
     public  Solicitud createSolicitud(Solicitud solicitud) throws Exception;
     public  Solicitud getSolicitudById(Long id) throws Exception;
     public  Solicitud updateSolicitud(Solicitud solicitud) throws Exception;

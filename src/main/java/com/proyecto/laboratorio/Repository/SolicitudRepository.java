@@ -14,6 +14,7 @@ import java.util.Optional;
 public interface SolicitudRepository extends CrudRepository<Solicitud,Long> {
     public Iterable<Solicitud>findByStatus(char status);
     public Iterable<Solicitud>findByFundacion(Fundacion fundacion);
+    public Iterable<Solicitud>findByFundacionAndStatus(Fundacion fundacion,char status);
     public Iterable<Solicitud>findByEmpleado(Empleado empleado);
     public  Iterable<Solicitud>findByFechaBetween(Date fecha1,Date fecha2);
     public  Iterable<Solicitud>findByFechaBetweenAndFundacion(Date fecha1,Date fecha2,Fundacion fundacion);

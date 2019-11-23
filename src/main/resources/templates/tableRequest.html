@@ -55,7 +55,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                tablas
+                Tablas
             </div>
 
             <!-- Nav Item - tables Collapse Listas -->
@@ -91,7 +91,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                registrar
+                Registrar
             </div>
 
             <!-- Nav Item - forms Collapse Formularios -->
@@ -181,7 +181,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">[[${#httpServletRequest.remoteUser}]]</span>
                                 <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                             </a>
                             <!-- Dropdown - User Information -->
@@ -190,7 +190,7 @@
                                 <!--<div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Salir
                                 </a>
                             </div>
                         </li>
@@ -217,16 +217,18 @@
                                         <span class="input-group-text"><i class="fas fa-sort"></i></span>
                                     </div>
                                     <select class="form-control" th:name="status">
-                                        <option value="p">pendientes</option>
-                                        <option value="a">aceptadas</option>
+                                        <option value="p">Pendientes</option>
+                                        <option value="a">Aceptadas</option>
+                                        <option value="n">Negadas</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="card-header py-3">
                                 <button type="submit" class="btn btn-info btn-block">Filtrar</button>
                             </div>
+                        </div>
                     </form>
-                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestF}">
+                    <form id="servicio2" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestF}">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"> <i class="fas fa-table"></i>
                                 <span>Fecha</span>
@@ -240,14 +242,15 @@
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fas fa-sort"></i></span>
                                         </div>
-                                        <input class="form-control" type="date" id="example-date-input" th:name="fecha2" required>
+                                        <input class="form-control" type="date" id="example-date-input2" th:name="fecha2" required>
                                     </div>
                                 </div>
                             <div class="card-header py-3">
                                 <button type="submit" class="btn btn-info btn-block">Filtrar</button>
                             </div>
+                        </div>
                     </form>
-                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestEmp}">
+                    <form id="servicio3" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableRequestEmp}">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3"> <i class="fas fa-table"></i>
                                 <span>Empleado</span>
@@ -265,6 +268,7 @@
                             <div class="card-header py-3">
                                 <button type="submit" class="btn btn-info btn-block">Filtrar</button>
                             </div>
+                        </div>
                     </form>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -273,30 +277,30 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>fecha</th>
+                                            <th>ID</th>
+                                            <th>Fecha</th>
                                             <th>Presupuesto</th>
-                                            <th>prioridad</th>
-                                            <th>status</th>
-                                            <th>cedula_Empleado</th>
-                                            <th>Fundacion_Nombre</th>
-                                            <th>Beneficiario_cedula</th>
-                                            <th>Beneficiario_nombre</th>
-                                            <th>Aceptar</th>
+                                            <th>Prioridad</th>
+                                            <th>Status</th>
+                                            <th>Cédula Empleado</th>
+                                            <th>Fundacion Nombre</th>
+                                            <th>Beneficiario Cédula</th>
+                                            <th>Beneficiario Nombre</th>
+                                            <th>Aceptar-Negar</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
-                                            <th>fecha</th>
+                                            <th>ID</th>
+                                            <th>Fecha</th>
                                             <th>Presupuesto</th>
-                                            <th>prioridad</th>
-                                            <th>status</th>
-                                            <th>cedula_Empleado</th>
-                                            <th>Fundacion_Nombre</th>
-                                            <th>Beneficiario_cedula</th>
-                                            <th>Beneficiario_nombre</th>
-                                            <th>Aceptar</th>
+                                            <th>Prioridad</th>
+                                            <th>Status</th>
+                                            <th>Cédula Empleado</th>
+                                            <th>Fundacion Nombre</th>
+                                            <th>Beneficiario Cédula</th>
+                                            <th>Beneficiario Nombre</th>
+                                            <th>Aceptar-Negar</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -312,14 +316,19 @@
                                             <td th:switch="${solicitud.status}">
                                                 <span th:case="'p'">Pendiente</span>
                                                 <span th:case="'a'">Aceptada</span>
+                                                <span th:case="'n'">Aceptada</span>
                                             </td>
                                             <td th:text="${solicitud.empleado.cedula}"></td>
                                             <td th:text="${solicitud.fundacion.nombre}"></td>
                                             <td th:text="${solicitud.persona.cedula}"></td>
                                             <td th:text="${solicitud.persona.nombre}"></td>
                                             <td th:switch="${solicitud.status}">
-                                                <span th:case="'p'"><a href="#" th:href="@{'/tableRequest'+ ${solicitud.id}}"><i class="fas fa-check-circle"></i></a></span>
-                                                <span th:case="'a'" style="color:red"> Aceptada</span>
+                                                <div th:case="'p'">
+                                                   <span><a href="#" th:href="@{'/tableRequest'+ ${solicitud.id}}"><i class="fas fa-check-circle"></i></a></span>
+                                                   <span>|<a href="#" th:href="@{'/deny'+ ${solicitud.id}}"><i class="fas fa-times-circle" style="color:red"></i></a></span>
+                                                </div>
+                                                <span th:case="'a'" style="color:blue"> Aceptada</span>
+                                                <span th:case="'n'" style="color:red"> Negada</span>
                                             </td>
                                         </tr>
                                         
@@ -341,7 +350,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Laboratorio I UCLA DCYT</span>
+                        <span> &copy; Laboratorio I UCLA DCYT 2019-I</span>
                     </div>
                 </div>
             </footer>
@@ -364,15 +373,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">¿Está seguro que desea salir?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Seleccione "Salir" si desea finalizar su sesión actual.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" th:href="@{/login}">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" th:href="@{/login}">Salir</a>
                 </div>
             </div>
         </div>

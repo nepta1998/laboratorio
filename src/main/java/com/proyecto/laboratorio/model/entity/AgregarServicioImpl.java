@@ -28,8 +28,8 @@ public class AgregarServicioImpl implements  AgregarServicio {
     }
 
     @Override
-    public void eliminarServicio(Servicio servicio) {
-            serviciolist.remove(servicio);
+    public void eliminarServicio(int posicion) {
+            serviciolist.remove(posicion);
     }
 
     @Override
