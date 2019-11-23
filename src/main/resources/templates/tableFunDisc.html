@@ -14,8 +14,8 @@
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -27,354 +27,357 @@
 
 <body id="page-top">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+<!-- Page Wrapper -->
+<div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-custom-1 sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-custom-1 sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/index}">
-                <div class="sidebar-brand-icon ">
-                    <i class="fas fa-city"></i>
-                    <!--<i class="fas fa-laugh-wink"></i>-->
-                </div>
-                <div class="sidebar-brand-text mx-3">Gobernación de Lara</div>
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/index}">
+            <div class="sidebar-brand-icon ">
+                <i class="fas fa-city"></i>
+                <!--<i class="fas fa-laugh-wink"></i>-->
+            </div>
+            <div class="sidebar-brand-text mx-3">Gobernación de Lara</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" th:href="@{/index}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            tablas
+        </div>
+
+        <!-- Nav Item - tables Collapse Listas -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Listados</span>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/index}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                tablas
-            </div>
-
-            <!-- Nav Item - tables Collapse Listas -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Listados</span>
-                </a>
-                <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Solicitudes:</h6>
-                        <a class="collapse-item " th:href=" @{/tableRequest}">
-                            <i class="fas fa-folder-open"></i>
-                            <span>Solicitudes</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Servicios:</h6>
-                        <a class="collapse-item " th:href="@{/tableService}">
-                            <i class="fas fa-syringe"></i>
-                            <span>Servicios</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Beneficiarios:</h6>
-                        <a class="collapse-item" th:href="@{/tableBeneficiario}">
-                            <i class="fas fa-users"></i>
-                            <span>Beneficiarios</span>
-                        </a>
-                    </div>
+            <div id="collapsePages" class="collapse " aria-labelledby="headingPages"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Solicitudes:</h6>
+                    <a class="collapse-item " th:href=" @{/tableRequest}">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Solicitudes</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Servicios:</h6>
+                    <a class="collapse-item " th:href="@{/tableService}">
+                        <i class="fas fa-syringe"></i>
+                        <span>Servicios</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Beneficiarios:</h6>
+                    <a class="collapse-item" th:href="@{/tableBeneficiario}">
+                        <i class="fas fa-users"></i>
+                        <span>Beneficiarios</span>
+                    </a>
                 </div>
-            </li>
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                registrar
             </div>
+        </li>
 
-            <!-- Nav Item - forms Collapse Formularios -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList"
-                    aria-expanded="true" aria-controls="collapseList">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Formularios</span>
-                </a>
-                <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Solicitud:</h6>
-                        <a class="collapse-item" th:href="@{/formRequest}">
-                            <i class="fas fa-file-signature"></i>
-                            <span>Registrar solicitud</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Servicio:</h6>
-                        <a class="collapse-item" th:href="@{/formService}">
-                            <i class="fas fa-syringe"></i>
-                            <span>Registrar servicio</span>
-                        </a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Empleado:</h6>
-                        <a class="collapse-item" th:href="@{/formUser}">
-                            <i class="fas fa-user"></i>
-                            <span>Registrar empleado</span>
-                        </a>
-                    </div>
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Registrar
+        </div>
+
+        <!-- Nav Item - forms Collapse Formularios -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList"
+               aria-expanded="true" aria-controls="collapseList">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Formularios</span>
+            </a>
+            <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Solicitud:</h6>
+                    <a class="collapse-item" th:href="@{/formRequest}">
+                        <i class="fas fa-file-signature"></i>
+                        <span>Registrar solicitud</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Servicio:</h6>
+                    <a class="collapse-item" th:href="@{/formService}">
+                        <i class="fas fa-syringe"></i>
+                        <span>Registrar servicio</span>
+                    </a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Empleado:</h6>
+                    <a class="collapse-item" th:href="@{/formUser}">
+                        <i class="fas fa-user"></i>
+                        <span>Registrar empleado</span>
+                    </a>
                 </div>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Comprimir Sidebar-->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+        </li>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Comprimir Sidebar-->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
-            <!-- Main Content -->
-            <div id="content">
+    </ul>
+    <!-- End of Sidebar -->
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+        <!-- Main Content -->
+        <div id="content">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
                                     </div>
-                                </form>
-                            </div>
-                        </li>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                    <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
-                                <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">[[${#httpServletRequest.remoteUser}]]</span>
+                            <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <!--<div class="dropdown-divider"></div>-->
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Salir
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <!--<div class="dropdown-divider"></div>-->
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
+                        </div>
+                    </li>
 
-                    </ul>
+                </ul>
 
-                </nav>
-                <!-- End of Topbar -->
+            </nav>
+            <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index">Menu Inicial</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="index">Fundaciones</a>
-                        </li>
-                        <li class="breadcrumb-item active">Fundación de Atención al Discapacitado</li>
-                    </ol>
-
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item ">RESPONSABLE: Dany Karam</li>
+                <!-- Page Heading -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="index">Menu Inicial</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="index">Fundaciones</a>
+                    </li>
+                    <li class="breadcrumb-item active">Fundación de Atención al Discapacitado</li>
+                </ol>
+                <!--
+                  <ol class="breadcrumb">
+                        <li class="breadcrumb-item ">RESPONSABLE: [[${#httpServletRequest.remoteUser}]]</li>
                         <li class="breadcrumb-item active">Fondos Asignados: 100000 Bs</li>
                         <li class="breadcrumb-item active">Fondos Utilizados: 1000 Bs</li>
-                    </ol>
+                    </ol> -->
 
-                    <form id="servicio" autocomplete="off" class="form" method="get" role="form" th:action="@{/tableFunDiscF}">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3"> <i class="fas fa-table"></i>
-                                <span>Fecha</span>
-                            </div>
-                            <div class="card-header py-3">
-                                <div class="form-group input-group">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
-                                    </div>
-                                    <input class="form-control" type="date" id="example-date-input" th:name="fecha1"
-                                        required>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-sort"></i></span>
-                                    </div>
-                                    <input class="form-control" type="date" id="example-date-input" th:name="fecha2"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="card-header py-3">
-                                <button type="submit" class="btn btn-info btn-block">Filtrar</button>
-                            </div>
-                    </form>
-
-                    <!-- DataTales Example -->
+                <form id="servicio" autocomplete="off" class="form" method="get" role="form"
+                      th:action="@{/tableFunDiscF}">
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <i class="fas fa-table"></i>
-                            <span>Solicitudes Registradas</span>
+                        <div class="card-header py-3"><i class="fas fa-table"></i>
+                            <span>Fecha</span>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>fecha</th>
-                                            <th>Presupuesto</th>
-                                            <th>prioridad</th>
-                                            <th>status</th>
-                                            <th>cedula_Empleado</th>
-                                            <th>Fundacion_id</th>
-                                            <th>Beneficiario_cedula</th>
-                                            <th>Aceptar</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>fecha</th>
-                                            <th>Presupuesto</th>
-                                            <th>prioridad</th>
-                                            <th>status</th>
-                                            <th>cedula_Empleado</th>
-                                            <th>Fundacion_id</th>
-                                            <th>Beneficiario_cedula</th>
-                                            <th>Aceptar</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr th:each="solicitud: ${solicitudList}">
-                                            <td th:text="${solicitud.id}"></td>
-                                            <td th:text="${solicitud.fecha}"></td>
-                                            <td th:text="${solicitud.presupuesto}"></td>
-                                            <td th:switch="${solicitud.prioridad}">
-                                                <span th:case="'0'">Alta</span>
-                                                <span th:case="'1'">Media</span>
-                                                <span th:case="'2'">Baja</span>
-                                            </td>
-                                            <td th:switch="${solicitud.status}">
-                                                <span th:case="'p'">Pendiente</span>
-                                                <span th:case="'a'">Aceptada</span>
-                                            </td>
-                                            <td th:text="${solicitud.empleado.cedula}"></td>
-                                            <td th:text="${solicitud.fundacion.nombre}"></td>
-                                            <td th:text="${solicitud.persona.cedula}"></td>
-                                            <td th:switch="${solicitud.status}">
-                                                <span th:case="'p'"><a href="#"
-                                                        th:href="@{'/tableFunDisc'+ ${solicitud.id}}"><i
-                                                            class="fas fa-check-circle"></i></a></span>
-                                                <span th:case="'a'" style="color:red"> Aceptada</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                 <input class="form-control" type="number" step="any" min="0" value="0" th:if="${totalSolicitudes}" th:value="${totalSolicitudes}" disabled  required>
+                        <div class="card-header py-3">
+                            <div class="form-group input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                </div>
+                                <input class="form-control" type="date" id="example-date-input" th:name="fecha1"
+                                       required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-sort"></i></span>
+                                </div>
+                                <input class="form-control" type="date" id="example-date-input2" th:name="fecha2"
+                                       required>
                             </div>
                         </div>
+                        <div class="card-header py-3">
+                            <button type="submit" class="btn btn-info btn-block">Filtrar</button>
+                        </div>
                     </div>
+                </form>
 
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <i class="fas fa-table"></i>
+                        <span>Solicitudes Registradas</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>fecha</th>
+                                    <th>Presupuesto</th>
+                                    <th>prioridad</th>
+                                    <th>status</th>
+                                    <th>cedula_Empleado</th>
+                                    <th>Fundacion_id</th>
+                                    <th>Beneficiario_cedula</th>
+                                    <th>Aceptar</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>id</th>
+                                    <th>fecha</th>
+                                    <th>Presupuesto</th>
+                                    <th>prioridad</th>
+                                    <th>status</th>
+                                    <th>cedula_Empleado</th>
+                                    <th>Fundacion_id</th>
+                                    <th>Beneficiario_cedula</th>
+                                    <th>Aceptar</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr th:each="solicitud: ${solicitudList}">
+                                    <td th:text="${solicitud.id}"></td>
+                                    <td th:text="${solicitud.fecha}"></td>
+                                    <td th:text="${solicitud.presupuesto}"></td>
+                                    <td th:switch="${solicitud.prioridad}">
+                                        <span th:case="'0'">Alta</span>
+                                        <span th:case="'1'">Media</span>
+                                        <span th:case="'2'">Baja</span>
+                                    </td>
+                                    <td th:switch="${solicitud.status}">
+                                        <span th:case="'p'">Pendiente</span>
+                                        <span th:case="'a'">Aceptada</span>
+                                    </td>
+                                    <td th:text="${solicitud.empleado.cedula}"></td>
+                                    <td th:text="${solicitud.fundacion.nombre}"></td>
+                                    <td th:text="${solicitud.persona.cedula}"></td>
+                                    <td th:switch="${solicitud.status}">
+                                                <span th:case="'p'"><a href="#"
+                                                                       th:href="@{'/tableFunDisc'+ ${solicitud.id}}"><i
+                                                        class="fas fa-check-circle"></i></a></span>
+                                        <span th:case="'a'" style="color:red"> Aceptada</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <input class="form-control" type="number" step="any" min="0" value="0"
+                                   th:if="${totalSolicitudes}" th:value="${totalSolicitudes}" disabled required>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Laboratorio I UCLA DCYT</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span> &copy; Laboratorio I UCLA DCYT 2019-I</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+</div>
+<!-- End of Page Wrapper -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" th:href="@{/login}">Logout</a>
-                </div>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Está seguro que desea salir?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Seleccione "Salir" si desea finalizar su sesión actual.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary" th:href="@{/login}">Salir</a>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

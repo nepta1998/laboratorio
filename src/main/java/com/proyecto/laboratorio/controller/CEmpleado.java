@@ -67,8 +67,9 @@ public class CEmpleado {
                 user.setPassword(empleado.getContraseña());
                 int id=fundacion.intValue();
 
-                Set<Role> roles = new HashSet<>();
+               Set<Role> roles = new HashSet<>();
                 Role rol = new Role();
+                //Set<Role> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 
                 if(id == 1){
                     rol = roleRepository.findByName("Usuario_1");
