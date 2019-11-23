@@ -69,12 +69,14 @@
                         <i class="fas fa-folder-open"></i>
                         <span>Solicitudes</span>
                     </a>
+                    <div sec:authorize="hasAuthority('Admin')">
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Servicios:</h6>
                     <a class="collapse-item " th:href="@{/tableService}">
                         <i class="fas fa-syringe"></i>
                         <span>Servicios</span>
                     </a>
+                    </div>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Beneficiarios:</h6>
                     <a class="collapse-item" th:href="@{/tableBeneficiario}">
@@ -98,23 +100,29 @@
             </a>
             <div id="collapseList" class="collapse" aria-labelledby="headingList" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
+                    <div sec:authorize="hasAuthority('Usuario_1') or hasAuthority('Usuario_2') or hasAuthority('Usuario_3')">
                     <h6 class="collapse-header">Solicitud:</h6>
                     <a class="collapse-item" th:href="@{/formRequest}">
                         <i class="fas fa-file-signature"></i>
                         <span>Registrar solicitud</span>
                     </a>
+                    </div>
+                    <div sec:authorize="hasAuthority('Admin')">
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Servicio:</h6>
                     <a class="collapse-item" th:href="@{/formService}">
                         <i class="fas fa-syringe"></i>
                         <span>Registrar servicio</span>
                     </a>
+                    </div>
+                        <div sec:authorize="hasAuthority('Admin')">
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Empleado:</h6>
                     <a class="collapse-item" th:href="@{/formUser}">
                         <i class="fas fa-user"></i>
                         <span>Registrar empleado</span>
                     </a>
+                        </div>
                 </div>
             </div>
         </li>
@@ -202,7 +210,7 @@
 
                 <!-- Icon Cards-->
                 <div  class="row justify-content-center">
-                    <div sec:authorize="hasRole('Usuario_1') or hasRole('Admin')" class="col-xl-3 col-sm-6 mb-3">
+                    <div sec:authorize="hasAuthority('Usuario_1') or hasAuthority('Admin')" class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-primary o-hidden h-100">
                             <div class="card-body">
                                 <div class="card-body-icon">
@@ -216,7 +224,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 mb-3">
+                    <div sec:authorize="hasAuthority('Usuario_2') or hasAuthority('Admin')" class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-warning o-hidden h-100">
                             <div class="card-body">
                                 <div class="card-body-icon">
@@ -230,7 +238,7 @@
                             </a>
                         </div>
                     </div>
-                    <div sec:authorize="hasRole('Usuario_2')" class="col-xl-3 col-sm-6 mb-3">
+                    <div sec:authorize="hasAuthority('Usuario_3') or hasAuthority('Admin')" class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-success o-hidden h-100">
                             <div class="card-body">
                                 <div class="card-body-icon"><i class="fa fa-female icon-2x" aria-hidden="true"></i></div>
@@ -244,7 +252,7 @@
                     </div>
                 </div>
                 <!-- Fundacion table-change fundacion -->
-                <div class="row">
+                <div sec:authorize="hasAuthority('Admin')" class="row">
                     <div class="col-xl-8 col-lg-7">
                         <div class="card shadow mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -433,15 +441,15 @@
 
     slider.oninput = function() {
         output.innerHTML = this.value + '%';
-    }
+    };
 
     slider1.oninput = function() {
         output1.innerHTML = this.value + '%';
-    }
+    };
 
     slider3.oninput = function() {
         output3.innerHTML = this.value + '%';
-    }
+    };
 
 </script>
 
