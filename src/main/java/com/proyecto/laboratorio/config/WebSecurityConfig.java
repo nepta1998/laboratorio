@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -30,6 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(resources).permitAll()
                 .antMatchers("/", "/index").permitAll()
+                .antMatchers("/formRequest").access("hasAuthority('Usuario_1') or hasAuthority('Usuario_2') or hasAuthority('Usuario_3')")
+                .antMatchers("/formEmployee").access("hasAuthority('Admin')")
+                .antMatchers("/formService").access("hasAuthority('Admin')")
+                .antMatchers("/tableService").access("hasAuthority('Admin')")
+                .antMatchers("/tableFunNinnos").access("hasAuthority('Admin') or hasAuthority('Usuario_1')")
+                .antMatchers("/tableFunDisc").access("hasAuthority('Admin') or hasAuthority('Usuario_2')")
+                .antMatchers("/tableFunMujer").access("hasAuthority('Admin') or hasAuthority('Usuario_3')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -43,7 +51,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .logout()
                 .permitAll()
-                .logoutSuccessUrl("/login?logout");
+                .logoutSuccessUrl("/login?logout")
+                .and()
+                .exceptionHandling().accessDeniedHandler(accessDeniedHandler());;
     }
 
     /*BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -95,6 +105,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
 
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler(){
+        return new CustomAccessDeniedHandler();
+    }
 
 
 }
