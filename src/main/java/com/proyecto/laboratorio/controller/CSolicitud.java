@@ -260,6 +260,16 @@ public class CSolicitud {
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
         return"tableFunNinnos";
     }
+    @GetMapping("/denyFunNinnos{id}")
+    public String getDenySolicitudfunN(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('n');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(1));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunNinnos";
+    }
 
 
     @GetMapping("/tableFunNinnosF")
@@ -295,6 +305,18 @@ public class CSolicitud {
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
         return"tableFunDisc";
     }
+
+    @GetMapping("/denyfunD{id}")
+    public String getDenySolicitudfunD(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('n');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(2));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunDisc";
+    }
+
     @GetMapping("/tableFunDiscF")
     public String getSolicitudesfunDFecha(Model model,
                                           @RequestParam(value = "fecha1") java.sql.Date fecha1,
@@ -318,6 +340,17 @@ public class CSolicitud {
         return"/tableFunMujer";
     }
 
+    @GetMapping("/denyFunMujer{id}")
+    public String getDenySolicitudFunMujer(Model model, @PathVariable(name="id")Long id) throws Exception
+    {
+        Solicitud solicitud= solicitudService.getSolicitudById(id);
+        solicitud.setStatus('n');
+        solicitudService.updateSolicitud(solicitud);
+        Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
+        model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
+        return"tableFunMujer";
+    }
+
     @GetMapping("/tableFunMujer{id}")
     public String getEditSolicitudfunM(Model model, @PathVariable(name="id")Long id) throws Exception
     {
@@ -326,7 +359,7 @@ public class CSolicitud {
         solicitudService.updateSolicitud(solicitud);
         Fundacion fundacion=fundacionService.getFundacionById(new Long(3));
         model.addAttribute("solicitudList",solicitudService.getSolicitudesByFundacion(fundacion));
-        return"/tableFunMujer";
+        return"tableFunMujer";
     }
 
     @GetMapping("/tableFunMujerF")

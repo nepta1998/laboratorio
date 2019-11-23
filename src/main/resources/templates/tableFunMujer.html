@@ -302,15 +302,21 @@
                                             <td th:switch="${solicitud.status}">
                                                 <span th:case="'p'">Pendiente</span>
                                                 <span th:case="'a'">Aceptada</span>
+                                                <span th:case="'n'">Negada</span>
                                             </td>
                                             <td th:text="${solicitud.empleado.cedula}"></td>
                                             <td th:text="${solicitud.fundacion.nombre}"></td>
                                             <td th:text="${solicitud.persona.cedula}"></td>
                                             <td th:switch="${solicitud.status}">
-                                                <span th:case="'p'"><a href="#"
-                                                        th:href="@{'/tableFunMujer'+ ${solicitud.id}}"><i
-                                                            class="fas fa-check-circle"></i></a></span>
-                                                <span th:case="'a'" style="color:red"> Aceptada</span>
+                                                <div th:case="'p'">
+                                                    <span><a href="#" th:href="@{'/tableFunMujer'+ ${solicitud.id}}"><i
+                                                                class="fas fa-check-circle"></i></a></span>
+                                                    <span>|<a href="#" th:href="@{'/denyFunMujer'+ ${solicitud.id}}"><i
+                                                                class="fas fa-times-circle"
+                                                                style="color:red"></i></a></span>
+                                                </div>
+                                                <span th:case="'a'" style="color:blue"> Aceptada</span>
+                                                <span th:case="'n'" style="color:red"> Negada</span>
                                             </td>
                                         </tr>
 
