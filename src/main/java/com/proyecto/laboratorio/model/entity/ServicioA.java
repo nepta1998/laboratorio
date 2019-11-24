@@ -2,7 +2,7 @@ package com.proyecto.laboratorio.model.entity;
 
 import java.util.List;
 
-public interface AgregarServicio {
+public interface ServicioA {
     void agregarServicio(Servicio servicio);
     void eliminarServicio(int posicion);
     List<Servicio>getAll();

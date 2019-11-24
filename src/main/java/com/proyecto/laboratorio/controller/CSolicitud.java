@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,7 @@ public class CSolicitud {
 
     ImplementorSolicitud[] imp={new Solicitud(),new Fundacion()};
     AbstraccionSolicitud abst[]= {new RefinedAbstractionSolicitud(imp[0]),new RefinedAbstractionSolicitud(imp[1])};
-    AgregarServicio agregarServicio=AgregarServicioImpl.Instance();
+    ServicioA agregarServicio= ServicioAImpl.Instance();
 
     @Autowired
     ServicioService servicioService;

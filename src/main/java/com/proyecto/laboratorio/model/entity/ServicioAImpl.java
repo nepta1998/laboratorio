@@ -3,21 +3,21 @@ package com.proyecto.laboratorio.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AgregarServicioImpl implements  AgregarServicio {
+public class ServicioAImpl implements ServicioA {
     List serviciolist;
-    private static AgregarServicio instancia=null;
+    private static ServicioA instancia=null;
 
 
-    private AgregarServicioImpl()
+    private ServicioAImpl()
     {
         serviciolist=new ArrayList();
     }
 
-    public static AgregarServicio Instance()
+    public static ServicioA Instance()
     {
         if(instancia==null)
         {
-            instancia=new AgregarServicioImpl();
+            instancia=new ServicioAImpl();
         }
         return instancia;
     }
