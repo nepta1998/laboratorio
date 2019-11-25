@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ServicioAImpl implements ServicioA {
     List serviciolist;
-    private static ServicioA instancia=null;
+    private static ServicioAImpl instancia=null;
 
 
     private ServicioAImpl()
@@ -13,7 +13,7 @@ public class ServicioAImpl implements ServicioA {
         serviciolist=new ArrayList();
     }
 
-    public static ServicioA Instance()
+    public static ServicioAImpl Instance()
     {
         if(instancia==null)
         {
