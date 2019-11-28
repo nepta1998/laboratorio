@@ -20,9 +20,9 @@ Aplicación Web para una gobernación ficticia que permite llevar la gestión de
 
 Tres patrones de diseño fueron implementados con fines de aprendizaje.
 
-* Creacional - Singleton.
-* Estructural - Bridge.
-* Comportamiento - Iterator.
+* Creational: [Singleton.](https://refactoring.guru/design-patterns/singleton)
+* Structural: [Bridge.](https://refactoring.guru/design-patterns/bridge)
+* Behavioral: [Iterator.](https://refactoring.guru/design-patterns/iterator)
 
 ## Autores
 
