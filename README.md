@@ -2,6 +2,14 @@
 
 Read this in: [Spanish.](README.es.md)
 
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td><a href="./README.md"> English </a></td>
+        <td><a href="./README.es.md"> Español </a></td>
+    </tr>
+</table>
+
 Proyecto Laboratorio I - UCLA DCyT 2019-I
 
 Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social.
