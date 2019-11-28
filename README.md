@@ -1,4 +1,7 @@
 # laboratorio
+
+Read this in: [Spanish.](README.es.md)
+
 Proyecto Laboratorio I - UCLA DCyT 2019-I
 
 Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social.
