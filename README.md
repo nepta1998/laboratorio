@@ -4,7 +4,7 @@
     <tr>
         <!-- Do not translate this table -->
         <td><a href="./README.md"> English </a></td>
-        <td><a href="./README.es.md"> Español </a></td>
+        <td><a href="./README.es.md"> Spanish </a></td>
     </tr>
 </table>
 
@@ -12,17 +12,17 @@ Aplicación Web para una gobernación ficticia que permite llevar la gestión de
 
 ## Construido con
 
-* [Spring Boot](https://spring.io/projects/spring-boot) - Framework basado en Java
-* [Boootstrap](https://getbootstrap.com/) - Framework de CSS
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
+* [Spring Boot](https://spring.io/projects/spring-boot) - Framework basado en Java.
+* [Boootstrap](https://getbootstrap.com/) - Framework de CSS.
+* [Maven](https://maven.apache.org/) - Manejador de dependencias.
 
 ## Patrones de Diseño
 
 Implementando tres patrones de diseño con propósitos de aprendizaje:
 
-* Creacional - Singleton
-* Estructural - Bridge
-* Comportamiento - Iterator
+* Creacional - Singleton.
+* Estructural - Bridge.
+* Comportamiento - Iterator.
 
 ## Autores
 
