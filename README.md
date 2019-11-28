@@ -1,4 +1,5 @@
 # Proyecto Laboratorio I - UCLA DCyT 2019-I
+
 <table>
     <tr>
         <!-- Do not translate this table -->
@@ -15,12 +16,12 @@ Aplicación Web para una gobernación ficticia que permite llevar la gestión de
 * [Boootstrap](https://getbootstrap.com/) - Framework de CSS
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 
-Implementando también tres patrones de diseño por propósitos de aprendizaje. Los cuales son:
-
 ## Patrones de Diseño
 
-* Creacionales - Singleton
-* Estructurales - Bridge
+Implementando tres patrones de diseño con propósitos de aprendizaje:
+
+* Creacional - Singleton
+* Estructural - Bridge
 * Comportamiento - Iterator
 
 ## Autores
