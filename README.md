@@ -1,4 +1,4 @@
-# Laboratorio I
+# Proyecto Laboratorio I - UCLA DCyT 2019-I
 <table>
     <tr>
         <!-- Do not translate this table -->
@@ -7,17 +7,28 @@
     </tr>
 </table>
 
-Proyecto Laboratorio I - UCLA DCyT 2019-I
+Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social. Utilizando el patrón de diseño MVC (Model-View-Controller).
 
-Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social.
+## Construido con
 
-Hecho en Spring Boot, utilizando Bootstrap como framework de CSS. Aplicando patrón de diseño MVC (Model-View-Controller).
-Implementando también tres patrones de dise;o
+* [Spring Boot](https://spring.io/projects/spring-boot) - Framework basado en Java
+* [Boootstrap](https://getbootstrap.com/) - Framework de CSS
+* [Maven](https://maven.apache.org/) - Manejador de dependencias
 
-Hecho por:
+Implementando también tres patrones de diseño por propósitos de aprendizaje. Los cuales son:
 
-- Neptalí Piña. [@nepta1998](https://github.com/nepta1998/)
+## Patrones de Diseño
 
-- José Luis Pacheco. [@joclpacheb](https://github.com/joclpacheb/)
+* Creacionales - Singleton
+* Estructurales - Bridge
+* Comportamiento - Iterator
 
-- Dany Karam. [@Ryuuji14](https://github.com/Ryuuji14)
+## Autores
+
+* **Neptalí Piña.** [@nepta1998.](https://github.com/nepta1998/)
+
+* **José Luis Pacheco.** [@joclpacheb.](https://github.com/joclpacheb/)
+
+* **Dany Karam.** [@Ryuuji14.](https://github.com/Ryuuji14)
+
+
