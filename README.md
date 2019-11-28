@@ -6,8 +6,8 @@ Hecho en Spring Boot, utilizando Bootstrap como Framework de CSS. Aplicando patr
 
 Hecho por:
 
-Neptalí Piña. @nepta1998
+Neptalí Piña. [@nepta1998](https://github.com/nepta1998/)
 
-José Luis Pacheco. @joclpacheb
+José Luis Pacheco. [@joclpacheb](https://github.com/joclpacheb/)
 
-Dany Karam. @Ryuuji14
+Dany Karam. [@Ryuuji14](https://github.com/Ryuuji14)
