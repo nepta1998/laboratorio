@@ -25,7 +25,7 @@ Three design patterns were implemented for learning purposes.
 * Structural - Bridge.
 * Behavioral - Iterator.
 
-## Autores
+## Authors
 
 * **Neptalí Piña.** [@nepta1998.](https://github.com/nepta1998/)
 
