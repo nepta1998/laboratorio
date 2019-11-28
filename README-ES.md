@@ -19,7 +19,7 @@ Utilizando el patrón de diseño MVC (Modelo-Vista-Controlador).
 
 ## Patrones de Diseño
 
-Tres patrones de diseño fueron implementados con propósitos de aprendizaje:
+Tres patrones de diseño fueron implementados con fines de aprendizaje.
 
 * Creacional - Singleton.
 * Estructural - Bridge.
