@@ -8,8 +8,7 @@
     </tr>
 </table>
 
-Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social. 
-Utilizando el patrón de diseño MVC (Modelo-Vista-Controlador).
+Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social. Utilizando el patrón de diseño MVC (Modelo-Vista-Controlador).
 
 ## Construido con
 
