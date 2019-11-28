@@ -21,9 +21,9 @@ Using the MVC Design Pattern (Model-View-Controller).
 
 Three design patterns were implemented for learning purposes. 
 
-* Creational - Singleton.
-* Structural - Bridge.
-* Behavioral - Iterator.
+* Creational: [Singleton.](https://refactoring.guru/design-patterns/singleton)
+* Structural: [Bridge.](https://refactoring.guru/design-patterns/bridge)
+* Behavioral: [Iterator.](https://refactoring.guru/design-patterns/iterator)
 
 ## Authors
 
