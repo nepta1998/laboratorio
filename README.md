@@ -1,28 +1,29 @@
-# Proyecto Laboratorio I - UCLA DCyT 2019-I
+# Laboratory I Project - UCLA DCyT 2019-I
 
 <table>
     <tr>
         <!-- Do not translate this table -->
         <td><a href="./README.md"> English </a></td>
-        <td><a href="./README.es.md"> Spanish </a></td>
+        <td><a href="./README-ES.md"> Spanish </a></td>
     </tr>
 </table>
 
-Aplicación Web para una gobernación ficticia que permite llevar la gestión de sus actividades de Desarrollo Social. Utilizando el patrón de diseño MVC (Model-View-Controller).
+Web Application for a fictitious government that allows the management of its Social Development activities.
+Using the MVC Design Pattern (Model-View-Controller).
 
-## Construido con
+## Built With
 
-* [Spring Boot](https://spring.io/projects/spring-boot) - Framework basado en Java.
-* [Boootstrap](https://getbootstrap.com/) - Framework de CSS.
-* [Maven](https://maven.apache.org/) - Manejador de dependencias.
+* [Spring Boot](https://spring.io/projects/spring-boot) - Java-based framework.
+* [Boootstrap](https://getbootstrap.com/) - CSS framework.
+* [Maven](https://maven.apache.org/) - Dependency management.
 
-## Patrones de Diseño
+## Design Patterns
 
-Implementando tres patrones de diseño con propósitos de aprendizaje:
+Three design patterns were implemented for learning purposes. 
 
-* Creacional - Singleton.
-* Estructural - Bridge.
-* Comportamiento - Iterator.
+* Creational - Singleton.
+* Structural - Bridge.
+* Behavioral - Iterator.
 
 ## Autores
 
@@ -31,5 +32,4 @@ Implementando tres patrones de diseño con propósitos de aprendizaje:
 * **José Luis Pacheco.** [@joclpacheb.](https://github.com/joclpacheb/)
 
 * **Dany Karam.** [@Ryuuji14.](https://github.com/Ryuuji14)
-
 
