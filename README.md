@@ -1,11 +1,11 @@
 # Laboratorio 
-#<table>
+<table>
     <tr>
         <!-- Do not translate this table -->
         <td><a href="./README.md"> English </a></td>
         <td><a href="./README.es.md"> Español </a></td>
     </tr>
-#</table>
+</table>
 
 Read this in: [Spanish.](README.es.md)
 
